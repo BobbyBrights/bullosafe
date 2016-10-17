@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Thin/DinCondensedThin.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/Thin/DinCondensedThin.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/Thin/DinCondensedThin.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/ThinItalic/DinCondensedThinItalic.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/ThinItalic/DinCondensedThinItalic.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/ThinItalic/DinCondensedThinItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Light/DinCondensedLight.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/Light/DinCondensedLight.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/Light/DinCondensedLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/LightItalic/DinCondensedLightItalic.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/LightItalic/DinCondensedLightItalic.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/LightItalic/DinCondensedLightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Regular/DinCondensedRegular.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/Regular/DinCondensedRegular.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/Regular/DinCondensedRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Medium/DinCondensedMedium.eot') format('embedded-opentype');
+  src: url('../fonts/DinCondensed/Medium/DinCondensedMedium.ttf') format('truetype');
+  src: url('../fonts/DinCondensed/Medium/DinCondensedMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Bold/DinCondensedBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCondensed';
+  src: url('../fonts/DinCondensed/Black/DinCondensedBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans/Light/OpenSansLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans/Regular/OpenSansRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans/Bold/OpenSansBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

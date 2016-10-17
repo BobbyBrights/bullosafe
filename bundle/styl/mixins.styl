@@ -1,0 +1,105 @@
+//fonts
+$openSans = 'Open Sans', Helvetica, Arial, sans-serif
+$dinCondensed = DinCondensed, Helvetica, Arial, sans-serif
+
+// Calculate padding for vertical align and set height&line-height
+button-height($height, $line-height) {
+  $padding = ($height - $line-height) / 2
+
+  height $height
+  line-height $line-height
+  padding-top $padding
+  padding-bottom $padding
+}
+
+
+link-reset() {
+  padding 0
+  border 0
+  background transparent
+  text-decoration none
+  outline none
+  cursor pointer
+  transition color .18s, border-bottom .18s
+}
+
+
+clearfix() {
+  content ''
+  display table
+  clear both
+}
+
+
+radioIcon() {
+  + .{$cls}__icon {
+    position relative
+    display inline-block
+    vertical-align middle
+    width 24px
+    height @width
+    //margin-right 15px
+    border-radius 50%
+    background-color #fff
+    border 1px solid $border-green
+    transition background .2s
+    &:before {
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      display block
+      width 14px
+      height @width
+      border-radius 50%
+      background-color $border-green
+      transition transform .2s ease
+    }
+  }
+  &:checked {
+    + .{$cls}__icon:before {
+      transform translate3d(-50%, -50%, 0) scale(1)
+    }
+  }
+  &:not(checked) {
+    + .{$cls}__icon:before {
+      transform translate3d(-50%, -50%, 0) scale(0)
+    }
+  }
+}
+
+
+checkboxIcon() {
+  + .{$cls}__icon {
+    position relative
+    display inline-block
+    vertical-align middle
+    width 40px
+    height @width
+    margin-right 15px
+    background-color #fff
+    border 1px solid $border-green
+    &:before {
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      display block
+      width 20px
+      height 16px
+      background url(../img/icon-check-red.png) no-repeat
+      background-size 20px 16px
+      transition transform .2s ease
+    }
+  }
+  &:checked {
+    + .{$cls}__icon:before {
+      transform translate3d(-50%, -50%, 0) scale(1)
+    }
+  }
+  &:not(checked) {
+    + .{$cls}__icon:before {
+      transform translate3d(-50%, -50%, 0) scale(0)
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.table-condensed > tbody > tr > td
+.table-condensed > tbody > tr > th
+.table-condensed > tfoot > tr > td
+.table-condensed > tfoot > tr > th
+.table-condensed > thead > tr > td
+.table-condensed > thead > tr > th
+  padding 5px
+
+table
+  border-spacing 0
+  border-collapse collapse
+
+.datepicker table tr td.active:active
+.datepicker table tr td.active.highlighted:active
+.datepicker table tr td.active.active
+.datepicker table tr td.active.highlighted.active
+.open>.dropdown-toggle.datepicker table tr td.active
+.open>.dropdown-toggle.datepicker table tr td.active.highlighted
+  background-color #3DCCC6 !important
+  border-color #3DCCC6 !important
+  text-shadow none !important
+
+.dropdown-menu
+  position absolute
+  top 100%
+  left 0
+  z-index 1000
+  display none
+  float left
+  min-width 160px
+  padding 5px 0
+  margin 2px 0 0
+  font-size 14px
+  text-align left
+  list-style none
+  background-color #fff
+  -webkit-background-clip padding-box
+  background-clip padding-box
+  border 1px solid rgba(0,0,0,.15)
+  border-radius 4px
+  -webkit-box-shadow 0 6px 12px rgba(0,0,0,.175)
+  box-shadow 0 6px 12px rgba(0,0,0,.175)
+
+.date-field
+  position relative
+  &__input
+    padding-right 45px
+  &__icon
+    position absolute
+    top 1px
+    right 0
+    width 45px
+    height 40px
+    border-left 1px solid alpha(#ccc, 50%)
+    pointer-events none
+    background url(../img/icon-calendar.png) no-repeat center center
+    background-size 18px 20px

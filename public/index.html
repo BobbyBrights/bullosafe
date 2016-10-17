@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizex="16x16" href="./static/img/favicon.png">
+    <title>BulloSafe</title>
+    <link rel="stylesheet" href="./static/css/fonts.css">
+    <link rel="stylesheet" href="./static/lib/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="./static/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+  </head>
+  <body class="page">
+    <div class="tabs">
+      <div class="tabs__header">
+        <div class="_active js-tabs-item tabs__item tabs__item_fast-buy" data-tab="fast-buy">
+          <div class="title title_size_m">Быстрая покупка
+          </div>
+        </div>
+        <div class="js-tabs-item tabs__item tabs__item_detailed" data-tab="detailed">
+          <div class="title title_size_m">Подробное оформление
+          </div>
+        </div>
+      </div>
+      <div class="tabs__content">
+        <div class="tabs__content-item">
+          <div class="fast-buy">
+            <div class="fast-buy__solutions solutions">
+              <div class="solutions__title title title_size_l">Готовые решения
+              </div>
+              <div class="solutions__list">
+                <div class="js-rf-item solutions__item" style="background-image:url(./static/img/bg-solutions-1.jpg)">
+                  <div class="solutions__radio">
+                    <label class="radio">
+                      <input class="radio__input" type="radio" name="radio-filter"/><span class="radio__icon"></span>
+                    </label>
+                  </div>
+                  <div class="solutions__type">
+                    <div class="solutions__type-title title title_size_m">Виза в Европу
+                    </div>
+                    <div class="solutions__type-description">Страховой полис с покрытием 30 000 евро минимальным наполнением и самой оптимальной ценой. Подходит для подачи документов на визу в Европу
+                    </div>
+                  </div>
+                </div>
+                <div class="js-rf-item solutions__item" style="background-image:url(./static/img/bg-solutions-2.jpg)">
+                  <div class="solutions__radio">
+                    <label class="radio">
+                      <input class="radio__input" type="radio" name="radio-filter"/><span class="radio__icon"></span>
+                    </label>
+                  </div>
+                  <div class="solutions__type">
+                    <div class="solutions__type-title title title_size_m">Страховой полис для поездки в Америку
+                    </div>
+                    <div class="solutions__type-description">
+                    </div>
+                  </div>
+                </div>
+                <div class="js-rf-item solutions__item" style="background-image:url(./static/img/bg-solutions-3.jpg)">
+                  <div class="solutions__radio">
+                    <label class="radio">
+                      <input class="radio__input" type="radio" name="radio-filter"/><span class="radio__icon"></span>
+                    </label>
+                  </div>
+                  <div class="solutions__type">
+                    <div class="solutions__type-title title title_size_m">Спортивная страховка
+                    </div>
+                    <div class="solutions__type-description">
+                    </div>
+                  </div>
+                </div>
+                <div class="js-rf-item solutions__item" style="background-image:url(./static/img/bg-solutions-4.jpg)">
+                  <div class="solutions__radio">
+                    <label class="radio">
+                      <input class="radio__input" type="radio" name="radio-filter"/><span class="radio__icon"></span>
+                    </label>
+                  </div>
+                  <div class="solutions__type">
+                    <div class="solutions__type-title title title_size_m">Страховка с покрытием для беременных
+                    </div>
+                    <div class="solutions__type-description">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fast-buy__options options">
+              <div class="options__title title title_size_l">Опции
+              </div>
+              <div class="options__item">
+                <div class="options__label">Страна
+                </div>
+                <div class="options__select">
+                  <select class="js-select select" multiple="multiple">
+                    <option>Россия</option>
+                    <option>Астралия</option>
+                    <option>Албания</option>
+                  </select>
+                </div>
+              </div>
+              <div class="options__item">
+                <div class="options__label">Когда уезжаете?
+                </div>
+                <div class="date-field options__leaving">
+                  <input class="date-field__input input input_size_m js-datepicker" type="text"/>
+                  <div class="date-field__icon">
+                  </div>
+                </div>
+                <div class="options__traveling">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">1й</span>
+                  </label>
+                </div>
+              </div>
+              <div class="options__item">
+                <div class="options__title title title_size_s">Кол-во застрахованых
+                </div>
+                <div class="options__ppl-list">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Я уже путешествую</span>
+                  </label>
+                  <div class="options__select">
+                    <select class="js-select select">
+                      <option>30 лет</option>
+                      <option>20 лет</option>
+                      <option>10 лет</option>
+                    </select>
+                  </div>
+                  <div class="options__add-ppl">
+                    <div class="link link_color_green">Добавить еще человека
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="button button_color_green button_size_m button_uppercase options__submit" type="submit">Применить фильтры
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="_tmpnone company-list">
+      <div class="company-list__item">
+        <div class="_open company js-company">
+          <div class="company__header">
+            <div class="company__logo"><img src="static/img/img-rosgosstrah.png">
+            </div>
+            <div class="company__price">1027,4
+            </div>
+            <div class="company__buy">
+              <div class="button button_color_green button_size_m button_uppercase">Купить
+              </div>
+            </div>
+          </div>
+          <div class="company__info">
+            <div class="company__info-more js-company-more-btn">
+              <div class="company__info-more-link link link_color_green">Подробнее<i class="icon icon_pointer-down-green"></i>
+              </div>
+            </div>
+            <div class="company__info-expert">
+              <div class="company__info-title">Рейтинг Эксперта
+              </div>
+              <div class="company__info-rating">A++
+              </div>
+            </div>
+            <div class="company__info-asn">
+              <div class="company__info-title">Рейтинг АСН
+              </div>
+              <div class="company__info-rating">85 Отлично!
+              </div>
+            </div>
+          </div>
+          <div class="company__content js-company-content">
+            <div class="company__pdf-list">
+              <div class="company__pdf-item">
+                <div class="pdf">
+                  <div class="pdf__icon">PDF
+                  </div><a class="link link_color_green pdf__link" href="#">Правила страхования</a>
+                </div>
+              </div>
+              <div class="company__pdf-item company__pdf-item_sep">
+                <div class="pdf">
+                  <div class="pdf__icon">PDF
+                  </div><a class="link link_color_green pdf__link" href="#">Образев полиса</a>
+                </div>
+              </div>
+            </div>
+            <div class="company__included">
+              <div class="company__included-title title title_size_m">Что входит в покрытие
+              </div>
+              <table class="company__included-list">
+                <tr class="company__included-row">
+                  <td class="company__included-name">Экстренная медицинская помощь
+                  </td>
+                  <td class="company__included-price">30 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Медикаменты
+                  </td>
+                  <td class="company__included-price">30 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Медицинское оборудование
+                  </td>
+                  <td class="company__included-price">30 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Медицинская транспортировка
+                  </td>
+                  <td class="company__included-price">30 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Перевозка останков
+                  </td>
+                  <td class="company__included-price">30 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Эвакуация детей
+                  </td>
+                  <td class="company__included-price">1 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Стоматология
+                  </td>
+                  <td class="company__included-price">250 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Возвращение из поездки
+                  </td>
+                  <td class="company__included-price">1 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Утрата документов
+                  </td>
+                  <td class="company__included-price">500 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Юридическая помощь
+                  </td>
+                  <td class="company__included-price">1 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Оплата срочных сообщений
+                  </td>
+                  <td class="company__included-price">100 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Задержка рейса
+                  </td>
+                  <td class="company__included-price">1 000 &euro;
+                  </td>
+                </tr>
+                <tr class="company__included-row">
+                  <td class="company__included-name">Визит третьего лица
+                  </td>
+                  <td class="company__included-price">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="company__footer">
+              <div class="company__footer-buy">
+                <div class="button button_color_green button_size_m button_uppercase">Купить
+                </div>
+              </div>
+              <div class="company__footer-price">1027,4 &#x20bd;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./static/lib/jquery/dist/jquery.min.js"></script>
+    <script src="./static/lib/select2/dist/js/select2.full.min.js"></script>
+    <script src="./static/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="./static/lib/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js"></script>
+    <script src="./static/js/common.js"></script>
+    <script src="./static/js/select.js"></script>
+    <script src="./static/js/datepicker.js"></script>
+  </body>
+</html>

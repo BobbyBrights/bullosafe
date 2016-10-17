@@ -1,0 +1,27 @@
+$cls = 'input'
+
+.{$cls}
+  display inline-block
+  width 100%
+  padding 0 18px
+  color $black
+  font-family $openSans
+  background #fff
+  border 1px solid $border
+  border-radius 4px
+  outline none
+  transition border-color .15s
+  &:focus
+    border 1px solid darken($border, 10%)
+
+
+  &_size
+    &_s
+      height 40px
+      font-size 14px
+      line-height 17px
+
+    &_m
+      height 42px
+      font-size 14px
+      line-height 20px

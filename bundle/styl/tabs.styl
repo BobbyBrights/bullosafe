@@ -1,0 +1,28 @@
+$cls = 'tabs'
+
+.{$cls}
+  width 494px
+  background-color #fff
+
+  &__header
+    font-size 0
+    border-bottom 1px solid $green
+
+  &__item
+    display inline-block
+    vertical-align top
+    height 50px
+    padding-top 18px
+    color $green
+    text-align center
+    tensition background-color .2s ease
+    cursor pointer
+    &_fast-buy
+      width 44%
+    &_detailed
+      width 56%
+    &._active
+      background-color $green
+      color #fff
+    .title
+      font-weight 500

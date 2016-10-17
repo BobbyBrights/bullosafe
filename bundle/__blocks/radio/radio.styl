@@ -1,0 +1,28 @@
+$cls = 'radio'
+
+.{$cls}
+  position relative
+  //display block
+  width 100%
+  height 100%
+  font-size 0
+  cursor pointer
+  overflow hidden
+  &:hover
+    .{$cls}__icon
+      box-shadow inset 0 -5px 10px 1px #f4f4f4
+      transition box-shadow .2s ease
+
+  &__input
+    position absolute
+    opacity 0
+    left -99999px
+    radioIcon()
+
+  &__label
+    display inline-block
+    vertical-align middle
+    max-width calc(100% - 55px) // 55px is width of icon
+    width 100%
+    font-size 16px
+    line-height 22px

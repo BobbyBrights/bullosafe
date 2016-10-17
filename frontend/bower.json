@@ -1,0 +1,22 @@
+{
+  "name": "BulloSafe",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chernetskov A."
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "select2": "^4.0.3",
+    "bootstrap-datepicker": "^1.6.4"
+  }
+}

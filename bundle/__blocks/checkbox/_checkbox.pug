@@ -1,0 +1,5 @@
+mixin checkbox(obj)
+  +b('label').checkbox(class=attributes.class)
+    +e('input').input(type='checkbox', name=obj.name, id=obj.id, checked=obj.checked)
+    +e.icon
+    +e.label!= obj.label

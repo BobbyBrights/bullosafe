@@ -1,0 +1,14 @@
+$cls = 'link'
+
+.{$cls}
+  link-reset()
+  font-family $openSans
+  transition color .2s ease
+
+
+  &_color
+    &_green
+      color $link-green
+      &:hover {
+        color darken($link-green, 30%)
+      }

@@ -1,0 +1,6 @@
+mixin radio(obj)
+  +b('label').radio(class=attributes.class)
+    +e('input').input(type='radio', name=obj.name, id=obj.id, checked=obj.checked)
+    +e.icon
+    if (obj.label)
+      +e.label!= obj.label
