@@ -1,0 +1,69 @@
+$cls = 'additional-options'
+
+.{$cls}
+  background-color rgba(38, 42, 48, 0.05)
+
+  &__header
+    position relative
+    margin-bottom 24px
+
+  &__close
+    position absolute
+    top 2px
+    right -17px
+    font-family $openSans
+    font-size 14px
+    &:after
+      content ''
+      display inline-block
+      vertical-align middle
+      width 12px
+      height 8px
+      margin-left 12px
+      background url(../img/icon-pointer-down-green.png) no-repeat
+      background-size 12px 8px
+
+  &__label
+    font-family $openSans
+    font-size 14px
+    line-height 20px
+    color $black
+    margin-bottom 6px
+
+  &__title
+    margin-bottom 15px
+    font-weight 700
+    &_sans
+      font-family $openSans
+
+  &__item
+    &:not(:last-of-type)
+      margin-bottom 40px
+    &_sep
+      padding-bottom 28px
+      margin-bottom 13px !important
+      border-bottom 1px solid $border
+      .{$cls}__title
+        margin-bottom 5px
+
+  &__checkbox-help
+    margin-bottom 20px
+    .checkbox__label
+      font-weight 700
+
+  &__icon-help
+    margin-left 10px
+
+  &__select-help
+    position relative
+    padding-right 64px
+    .{$cls}__icon-help
+      position absolute
+      top 50%
+      right 27px
+      transform translateY(-50%)
+
+  &__radio-list
+    padding-left 8.5%
+    .radio__label
+      white-space nowrap

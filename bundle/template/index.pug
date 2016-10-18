@@ -8,12 +8,12 @@ block content
   +b.page__sidebar
     +b.tabs
       +e.header
-        +e.item_fast-buy._-active.js-tabs-item(data-tab='fast-buy')
+        +e.item_fast-buy.js-tabs-item(data-tab='fast-buy')
           +b.title_size_m Быстрая покупка
-        +e.item_detailed.js-tabs-item(data-tab='detailed')
+        +e.item_detailed._-active.js-tabs-item(data-tab='detailed')
           +b.title_size_m Подробное оформление
       +e.content
-        +e.content-item
+        +e.content-item.js-content-item(data-content='fast-buy')
           +b.fast-buy
             +b.solutions.__solutions
               +b.title_size_l.__title Готовые решения
@@ -49,7 +49,7 @@ block content
                 +e.traveling
                   +checkbox({label: 'Я уже путешествую'})
               +e.item
-                +b.insuranced-ppl.__insuranced-ppl
+                +b.insuranced-ppl.__insuranced-ppl.js-insurance-ppl
                   +e.title Кол-во застрахованых
                   +e.item
                     +e.counter
@@ -60,13 +60,105 @@ block content
                         option 20 лет
                         option 10 лет
                     +e.add-ppl
-                      +b.link_color_green Добавить еще человека
+                      +b.link_color_green.js-insurance-ppl-add Добавить еще человека
             +e.submit
               +b('input').button_size_m._color_green._uppercase.__submit(type='submit') Применить фильтры
 
+        +e.content-item._-active.js-content-item(data-content='detailed')
+          +b.detailed-form
+            +b.options.__options
+              +b.title_size_l.__title Опции
+              +e.item
+                +e.label Страна
+                +e.select
+                  +b('select').select.js-select(multiple, style='width: 100%')
+                    option Россия
+                    option Астралия
+                    option Албания
+              +e.item_sep
+                +e.label Когда уезжаете?
+                +b.date-field.__leaving
+                  +b.input_size_m.__input.js-datepicker(type='text')
+                  +e.icon
+                +e.traveling
+                  +checkbox({label: 'Я уже путешествую'})
+              +e.item
+                +b.insuranced-ppl.__insuranced-ppl.js-insurance-ppl
+                  +e.title Кол-во застрахованых
+                  +e.item
+                    +e.counter
+                      +checkbox({label: '1й'})
+                    +e.select
+                      +b('select').select.js-select(style='width: 100%')
+                        option 30 лет
+                        option 20 лет
+                        option 10 лет
+                    +e.add-ppl
+                      +b.link_color_green.js-insurance-ppl-add Добавить еще человека
+
+            +b.additional-options.__additional-options
+              +e.header
+                +b.title_size_l.__title Дополнительные опции
+                +b.link_color_green.__close.js-ao-close Скрыть
+              +e.body
+                +e.item
+                  +e.label Страховая сумма
+                  +b.radio-buttons
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-30k' name='insurance-sum', checked)
+                      +e('label').label(for='id-insurance-sum-30k') 30 000 &euro;
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-50k' name='insurance-sum')
+                      +e('label').label(for='id-insurance-sum-50k') 50 000 &euro;
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-100k' name='insurance-sum')
+                      +e('label').label(for='id-insurance-sum-100k') 100 000 &euro;
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Что входит в медицинское страхование
+                  +b.checkbox-list
+                    each name in ['Репатриация', 'Оплата проезда до больницы', 'Медицинская помощь в результате терактов']
+                      +e.item
+                        +checkbox({label: name})
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Осложнение протекания беременности:
+                  +e.select-help
+                    +b('select').select.js-select(style='width: 100%')
+                    +b.icon_help.__icon-help ?
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Страхование при занятиях спортом
+                  +e.select-help
+                    +b('select').select.js-select(style='width: 100%')
+                    +b.icon_help.__icon-help ?
+                +e.item_sep
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование от несчастных случаев'})
+                    +b.icon_help.__icon-help ?
+                  +b.radio-list_horizontal.__radio-list
+                    each radio in ['5000 &euro;', '10000 &euro;', '15000 &euro;']
+                      +e.item
+                        +radio({label: radio, name: 'insurance-аccident'})
+                +e.item_sep
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование багажа'})
+                    +b.icon_help.__icon-help ?
+                  +b.progress.__progress
+                    +e.checkbox-help
+                      +checkbox({label: 'Страхование задержки багажа'})
+                      +b.icon_help.__icon-help ?
+                +e.item
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование отмены поездки'})
+                    +b.icon_help.__icon-help ?
+                  +b.trip-canceled
+                    +e.input
+                      +b('input').input(type='text')
+                    +e.checkbox-help
+                      +checkbox({label: 'Страховой случай при амбулаторном лечении'})
+                      +b.icon_help.__icon-help ?
 
 
-    +b.helper
+
+    +b.helper._-visible
       +e.item
         +e.time 4 мин назад
         +e.answer
@@ -145,12 +237,16 @@ block js
 
 block templates
   template#insurancedPpl
-    +b.ppl-list__item
-      +checkbox({label: '1й'})
-      +e.select
+    +b.insuranced-ppl__item
+      +b.insuranced-ppl__counter
+        +b('label').checkbox
+          +e('input').input(type='checkbox')
+          +e.icon
+          +e.label {{name}}й
+      +b.insuranced-ppl__select
         +b('select').select.js-select(style='width: 100%')
           option 30 лет
           option 20 лет
           option 10 лет
-      +e.add-ppl
-        +b.link_color_green Добавить еще человека
+      +b.insuranced-ppl__add-ppl
+        +b.link_color_green.js-insurance-ppl-add Добавить еще человека

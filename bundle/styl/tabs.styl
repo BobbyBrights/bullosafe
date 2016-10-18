@@ -37,6 +37,11 @@ $cls = 'tabs'
     .title
       font-weight 500
 
+  &__content-item
+    display none
+    &._active
+      display block
+
 
 @media $mDesktop
   .{$cls}

@@ -14,17 +14,17 @@
     <div class="page__sidebar">
       <div class="tabs">
         <div class="tabs__header">
-          <div class="_active js-tabs-item tabs__item tabs__item_fast-buy" data-tab="fast-buy">
+          <div class="js-tabs-item tabs__item tabs__item_fast-buy" data-tab="fast-buy">
             <div class="title title_size_m">Быстрая покупка
             </div>
           </div>
-          <div class="js-tabs-item tabs__item tabs__item_detailed" data-tab="detailed">
+          <div class="_active js-tabs-item tabs__item tabs__item_detailed" data-tab="detailed">
             <div class="title title_size_m">Подробное оформление
             </div>
           </div>
         </div>
         <div class="tabs__content">
-          <div class="tabs__content-item">
+          <div class="js-content-item tabs__content-item" data-content="fast-buy">
             <div class="fast-buy">
               <div class="fast-buy__solutions solutions">
                 <div class="solutions__title title title_size_l">Готовые решения
@@ -113,7 +113,7 @@
                   </div>
                 </div>
                 <div class="options__item">
-                  <div class="insuranced-ppl options__insuranced-ppl">
+                  <div class="insuranced-ppl js-insurance-ppl options__insuranced-ppl">
                     <div class="insuranced-ppl__title">Кол-во застрахованых
                     </div>
                     <div class="insuranced-ppl__item">
@@ -130,7 +130,7 @@
                         </select>
                       </div>
                       <div class="insuranced-ppl__add-ppl">
-                        <div class="link link_color_green">Добавить еще человека
+                        <div class="js-insurance-ppl-add link link_color_green">Добавить еще человека
                         </div>
                       </div>
                     </div>
@@ -143,9 +143,203 @@
               </div>
             </div>
           </div>
+          <div class="_active js-content-item tabs__content-item" data-content="detailed">
+            <div class="detailed-form">
+              <div class="detailed-form__options options">
+                <div class="options__title title title_size_l">Опции
+                </div>
+                <div class="options__item">
+                  <div class="options__label">Страна
+                  </div>
+                  <div class="options__select">
+                    <select class="js-select select" multiple="multiple" style="width: 100%">
+                      <option>Россия</option>
+                      <option>Астралия</option>
+                      <option>Албания</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="options__item options__item_sep">
+                  <div class="options__label">Когда уезжаете?
+                  </div>
+                  <div class="date-field options__leaving">
+                    <input class="date-field__input input input_size_m js-datepicker" type="text"/>
+                    <div class="date-field__icon">
+                    </div>
+                  </div>
+                  <div class="options__traveling">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Я уже путешествую</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="options__item">
+                  <div class="insuranced-ppl js-insurance-ppl options__insuranced-ppl">
+                    <div class="insuranced-ppl__title">Кол-во застрахованых
+                    </div>
+                    <div class="insuranced-ppl__item">
+                      <div class="insuranced-ppl__counter">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">1й</span>
+                        </label>
+                      </div>
+                      <div class="insuranced-ppl__select">
+                        <select class="js-select select" style="width: 100%">
+                          <option>30 лет</option>
+                          <option>20 лет</option>
+                          <option>10 лет</option>
+                        </select>
+                      </div>
+                      <div class="insuranced-ppl__add-ppl">
+                        <div class="js-insurance-ppl-add link link_color_green">Добавить еще человека
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="additional-options detailed-form__additional-options">
+                <div class="additional-options__header">
+                  <div class="additional-options__title title title_size_l">Дополнительные опции
+                  </div>
+                  <div class="additional-options__close js-ao-close link link_color_green">Скрыть
+                  </div>
+                </div>
+                <div class="additional-options__body">
+                  <div class="additional-options__item">
+                    <div class="additional-options__label">Страховая сумма
+                    </div>
+                    <div class="radio-buttons">
+                      <div class="radio-buttons__item">
+                        <input class="radio-buttons__input" type="radio" id="id-insurance-sum-30k" name="insurance-sum" checked="checked"/>
+                        <label class="radio-buttons__label" for="id-insurance-sum-30k">30 000 &euro;
+                        </label>
+                      </div>
+                      <div class="radio-buttons__item">
+                        <input class="radio-buttons__input" type="radio" id="id-insurance-sum-50k" name="insurance-sum"/>
+                        <label class="radio-buttons__label" for="id-insurance-sum-50k">50 000 &euro;
+                        </label>
+                      </div>
+                      <div class="radio-buttons__item">
+                        <input class="radio-buttons__input" type="radio" id="id-insurance-sum-100k" name="insurance-sum"/>
+                        <label class="radio-buttons__label" for="id-insurance-sum-100k">100 000 &euro;
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item additional-options__item_sep">
+                    <div class="additional-options__title additional-options__title_sans title title_size_s">Что входит в медицинское страхование
+                    </div>
+                    <div class="checkbox-list">
+                      <div class="checkbox-list__item">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Репатриация</span>
+                        </label>
+                      </div>
+                      <div class="checkbox-list__item">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Оплата проезда до больницы</span>
+                        </label>
+                      </div>
+                      <div class="checkbox-list__item">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Медицинская помощь в результате терактов</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item additional-options__item_sep">
+                    <div class="additional-options__title additional-options__title_sans title title_size_s">Осложнение протекания беременности:
+                    </div>
+                    <div class="additional-options__select-help">
+                      <select class="js-select select" style="width: 100%">
+                      </select>
+                      <div class="additional-options__icon-help icon icon_help">?
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item additional-options__item_sep">
+                    <div class="additional-options__title additional-options__title_sans title title_size_s">Страхование при занятиях спортом
+                    </div>
+                    <div class="additional-options__select-help">
+                      <select class="js-select select" style="width: 100%">
+                      </select>
+                      <div class="additional-options__icon-help icon icon_help">?
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item additional-options__item_sep">
+                    <div class="additional-options__checkbox-help">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Страхование от несчастных случаев</span>
+                      </label>
+                      <div class="additional-options__icon-help icon icon_help">?
+                      </div>
+                    </div>
+                    <div class="additional-options__radio-list radio-list radio-list_horizontal">
+                      <div class="radio-list__item">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="insurance-аccident"/><span class="radio__icon"></span><span class="radio__label">5000 &euro;</span>
+                        </label>
+                      </div>
+                      <div class="radio-list__item">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="insurance-аccident"/><span class="radio__icon"></span><span class="radio__label">10000 &euro;</span>
+                        </label>
+                      </div>
+                      <div class="radio-list__item">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="insurance-аccident"/><span class="radio__icon"></span><span class="radio__label">15000 &euro;</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item additional-options__item_sep">
+                    <div class="additional-options__checkbox-help">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Страхование багажа</span>
+                      </label>
+                      <div class="additional-options__icon-help icon icon_help">?
+                      </div>
+                    </div>
+                    <div class="additional-options__progress progress">
+                      <div class="progress__checkbox-help">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Страхование задержки багажа</span>
+                        </label>
+                        <div class="icon icon_help progress__icon-help">?
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additional-options__item">
+                    <div class="additional-options__checkbox-help">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Страхование отмены поездки</span>
+                      </label>
+                      <div class="additional-options__icon-help icon icon_help">?
+                      </div>
+                    </div>
+                    <div class="trip-canceled">
+                      <div class="trip-canceled__input">
+                        <input class="input" type="text"/>
+                      </div>
+                      <div class="trip-canceled__checkbox-help">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">Страховой случай при амбулаторном лечении</span>
+                        </label>
+                        <div class="icon icon_help trip-canceled__icon-help">?
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="helper">
+      <div class="_visible helper">
         <div class="helper__item">
           <div class="helper__time">4 мин назад
           </div>
@@ -303,19 +497,21 @@
       </div>
     </div>
     <template id="insurancedPpl">
-      <div class="ppl-list__item">
-        <label class="checkbox">
-          <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">1й</span>
-        </label>
-        <div class="ppl-list__select">
+      <div class="insuranced-ppl__item">
+        <div class="insuranced-ppl__counter">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox"/><span class="checkbox__icon"></span><span class="checkbox__label">{{name}}й</span>
+          </label>
+        </div>
+        <div class="insuranced-ppl__select">
           <select class="js-select select" style="width: 100%">
             <option>30 лет</option>
             <option>20 лет</option>
             <option>10 лет</option>
           </select>
         </div>
-        <div class="ppl-list__add-ppl">
-          <div class="link link_color_green">Добавить еще человека
+        <div class="insuranced-ppl__add-ppl">
+          <div class="js-insurance-ppl-add link link_color_green">Добавить еще человека
           </div>
         </div>
       </div>
@@ -325,7 +521,7 @@
     <script src="./static/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="./static/lib/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js"></script>
     <script src="./static/lib/handlebars/handlebars.min.js"></script>
-    <script src="./static/lib/handlebars/handlebars.runtime.min.js"></script>
+    <!--script(src='./static/lib/handlebars/handlebars.runtime.min.js')-->
     <script src="./static/js/common.js"></script>
     <script src="./static/js/select.js"></script>
     <script src="./static/js/datepicker.js"></script>
