@@ -2,12 +2,16 @@ $cls = 'options'
 
 .{$cls}
   &__title
-    margin-bottom 20px
+    margin-bottom 16px
 
   &__item
     font-size 0
     &:not(:last-of-type)
       margin-bottom 33px
+    &_sep
+      padding-bottom 28px
+      margin-bottom 23px !important
+      border-bottom 1px solid $border
 
   &__label
     font-family $openSans
@@ -16,14 +20,36 @@ $cls = 'options'
     color $black
     margin-bottom 8px
 
-  &__select
-    width 92%
-
   &__leaving
     display inline-block
     vertical-align middle
-    width 234px
+    width 55.8%
+    margin-right 3.7%
 
   &__traveling
     display inline-block
     vertical-align middle
+    width 40.5%
+
+  &__insuranced-ppl
+    margin-bottom 50px
+
+
+@media $mDesktop
+  .{$cls}
+    &__title
+      margin-bottom 17px
+
+    &__item
+      &_sep
+        padding-bottom 20px
+
+    &__leaving
+      width 85.8%
+      margin-bottom 15px
+
+    &__traveling
+      width auto
+
+    &__insurance-ppl
+      margin-bottom 40px

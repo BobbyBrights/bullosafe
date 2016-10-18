@@ -1,0 +1,48 @@
+$cls = 'insuranced-ppl'
+
+.{$cls}
+  &__title
+    margin-bottom 16px
+    font-family $openSans
+    font-size 14px
+    font-weight 700
+    line-height 20px
+    color $black
+
+  &__item
+    &:not(:last-of-type)
+      margin-bottom 20px
+
+  &__counter
+    display inline-block
+    vertical-align middle
+    width 14%
+    padding-right 5px
+
+  &__select
+    display inline-block
+    vertical-align middle
+    width 31.5%
+    margin-right 11.2%
+
+  &__add-ppl
+    display inline-block
+    vertical-align middle
+    width 41.3%
+    .link
+      font-family $openSans
+      font-size 14px
+      line-height 20px
+
+
+@media $mDesktop
+  .{$cls}
+    &__counter
+      width 21.3%
+
+    &__select
+      width 48.5%
+
+    &__add-ppl
+      width 100%
+      margin-top 25px

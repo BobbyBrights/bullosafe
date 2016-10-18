@@ -154,6 +154,12 @@ gulp.task('bower', function () {
             'dist/js/bootstrap-datepicker.min.js',
             'dist/locales/bootstrap-datepicker.ru.min.js'
           ]
+        },
+        'handlebars': {
+          main: [
+            'handlebars.min.js',
+            'handlebars.runtime.min.js'
+          ]
         }
       }
     }), {base: 'bower_components/'})

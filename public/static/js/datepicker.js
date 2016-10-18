@@ -3,5 +3,7 @@ $('.js-datepicker').datepicker({
   todayHighlight: true,
   toggleActive: true,
   format: "dd.mm.yyyy",
-  autoclose: true
+  // autoclose: true,
+  multidate: true,
+  multidateSeparator: "-"
 });

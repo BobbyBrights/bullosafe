@@ -1,28 +1,51 @@
 $cls = 'tabs'
 
 .{$cls}
-  width 494px
+  display table-cell
+  vertical-align top
+  width 61.5%
   background-color #fff
+  box-shadow inset 12px 0 12px alpha($border, 39%)
 
   &__header
+    display table
+    width 100%
+    border-spacing 0
+    border-collapse collapse
     font-size 0
     border-bottom 1px solid $green
 
   &__item
-    display inline-block
+    display table-cell
     vertical-align top
-    height 50px
+    height: 100%
     padding-top 18px
+    padding-bottom 16px
+    padding-left 15px
+    padding-right 15px
     color $green
     text-align center
-    tensition background-color .2s ease
+    transition background-color .2s ease
     cursor pointer
     &_fast-buy
-      width 44%
+      width 45%
     &_detailed
-      width 56%
+      width 55%
     &._active
       background-color $green
       color #fff
     .title
       font-weight 500
+
+
+@media $mDesktop
+  .{$cls}
+    width 64%
+
+    &__item
+      text-align left
+      padding-left 23px
+      .title
+        line-height 21px
+      &_fast-buy
+        width 44.5%

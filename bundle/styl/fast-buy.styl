@@ -1,18 +1,42 @@
 $cls = 'fast-buy'
 
 .{$cls}
+  padding-bottom 50px
+
   &__solutions
     padding-top 7.2%
     padding-left 4%
     padding-right 4%
     padding-bottom 5.4%
     border-bottom 1px solid $border
-    .title
-      font-weight 500
 
   &__options
     padding-top 5%
-    padding-right 4.3%
+    padding-right 8.8%
     padding-left 4.3%
     .title
       font-weight 500
+
+  &__submit
+    text-align center
+    .button
+      width 56%
+
+
+@media $mDesktop
+  .{$cls}
+    &__solutions
+      padding-top 5.6%
+      padding-right 6%
+      padding-bottom 3.7%
+      padding-left 5.6%
+
+    &__options
+      padding-top 7.5%
+      padding-left 6.3%
+
+    &__submit
+      padding-right 9%
+      padding-left 4%
+      .button
+        width 100%

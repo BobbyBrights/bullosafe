@@ -1,10 +1,14 @@
+// viewports
+$mDesktop = 'screen and (max-width: 1399px)' // добавить '(min-width: 970px) and'
+$mHD = 'screen and (min-width: 1400px)'
+
 //fonts
 $openSans = 'Open Sans', Helvetica, Arial, sans-serif
 $dinCondensed = DinCondensed, Helvetica, Arial, sans-serif
 
 // Calculate padding for vertical align and set height&line-height
 button-height($height, $line-height) {
-  $padding = ($height - $line-height) / 2
+  $padding = ($height - $line-height) / 2 + 2
 
   height $height
   line-height $line-height
@@ -74,27 +78,33 @@ checkboxIcon() {
     position relative
     display inline-block
     vertical-align middle
-    width 40px
+    width 24px
     height @width
-    margin-right 15px
+    margin-right 8px
     background-color #fff
-    border 1px solid $border-green
+    border 1px solid $border
+    border-radius 3px
+    transition background-color .2s ease, border-color .2s ease
     &:before {
       content ''
       position absolute
       top 50%
       left 50%
       display block
-      width 20px
-      height 16px
-      background url(../img/icon-check-red.png) no-repeat
-      background-size 20px 16px
+      width 17px
+      height 15px
+      background url(../img/icon-check.png) no-repeat center center
+      background-size 17px 15px
       transition transform .2s ease
     }
   }
   &:checked {
-    + .{$cls}__icon:before {
-      transform translate3d(-50%, -50%, 0) scale(1)
+    + .{$cls}__icon {
+      background-color $green
+      border-color $green
+      &:before {
+        transform translate3d(-50%, -50%, 0) scale(1)
+      }
     }
   }
   &:not(checked) {
