@@ -10,6 +10,10 @@ var gulp = require('gulp'),
   filter = require('gulp-filter'),
   flo = require('fb-flo'),
   mainBowerFiles = require('main-bower-files'),
+  svgmin = require('gulp-svgmin'),
+  cheerio = require('gulp-cheerio'),
+  svgstore = require('gulp-svgstore'),
+  browserSync = require('browser-sync').create(),
   path = require('path'),
   fs = require('fs');
 
@@ -40,7 +44,6 @@ gulp.task('stylus', function () {
     .pipe(gulp.dest(_pathToBuild + 'css/'))
 });
 
-
 /**
  * Следим за изменениями стилей и обновляем их в браузере
  */
@@ -63,9 +66,10 @@ gulp.task('watch', ['stylus'], function () {
 
 
   gulp.watch(_pathToSrc + '**/*.styl', ['stylus']);
-  gulp.watch(_pathToSrc + 'img/*', ['imagemin']);
+  // gulp.watch(_pathToSrc + 'img/*', ['imagemin']);
+  gulp.watch(_pathToSrc + 'img/*.svg', ['svgo']);
+  gulp.watch(_pathToSrc + 'img/*.svg', ['svg-sprite']);
 });
-
 
 /**
  * Локальный сервер
@@ -75,27 +79,28 @@ gulp.task('webserver', function () {
     server: {baseDir: "../public/"},
     serverStatic: '../public/static/',
     host: 'localhost',
-    port: 9000,
-    startPath: '/project-info1.html'
+    port: 9000
+    // startPath: '/project-info1.html'
   };
 
   browserSync.init(config);
   gulp.watch('../public/*.html', browserSync.reload()); // FIXME T_T
 });
 
-
 /**
  * Минификация изображений
  */
-gulp.task('imagemin', function () {
-  gulp.src(_pathToSrc + 'img/*')
-    .pipe(imagemin({
-      progressive: true,
-      interlaced: true
-    }))
-    .pipe(gulp.dest(_pathToBuild + 'img/'));
-});
-
+// gulp.task('imagemin', function () {
+//   gulp.src(_pathToSrc + 'img/*')
+//     .pipe(imagemin({
+//       plugins: [
+//         imagemin.svgo({})
+//       ],
+//       progressive: true,
+//       interlaced: true
+//     }))
+//     .pipe(gulp.dest(_pathToBuild + 'img/'));
+// });
 
 /**
  * Watcher .pug файлов
@@ -114,7 +119,6 @@ gulp.task('watch-pug', function () {
     .pipe(gulp.dest('../public/'));
 });
 
-
 /**
  * Компиляция .pug файлов
  */
@@ -130,40 +134,69 @@ gulp.task('pug', function () {
     .pipe(gulp.dest('../public/'));
 });
 
-
 /**
  * Сборка библиотек
  */
 gulp.task('bower', function () {
   return gulp.src(mainBowerFiles({
-      overrides: {
-        jquery: {
-          main: [
-            'dist/jquery.min.js'
-          ]
-        },
-        'select2': {
-          main: [
-            'dist/css/select2.min.css',
-            'dist/js/select2.full.min.js'
-          ]
-        },
-        'bootstrap-datepicker': {
-          main: [
-            'dist/css/bootstrap-datepicker3.min.css',
-            'dist/js/bootstrap-datepicker.min.js',
-            'dist/locales/bootstrap-datepicker.ru.min.js'
-          ]
-        },
-        'handlebars': {
-          main: [
-            'handlebars.min.js',
-            'handlebars.runtime.min.js'
-          ]
-        }
+    overrides: {
+      jquery: {
+        main: [
+          'dist/jquery.min.js'
+        ]
+      },
+      'select2': {
+        main: [
+          'dist/css/select2.min.css',
+          'dist/js/select2.full.min.js'
+        ]
+      },
+      'bootstrap-datepicker': {
+        main: [
+          'dist/css/bootstrap-datepicker3.min.css',
+          'dist/js/bootstrap-datepicker.min.js',
+          'dist/locales/bootstrap-datepicker.ru.min.js'
+        ]
+      },
+      'handlebars': {
+        main: [
+          'handlebars.min.js',
+          'handlebars.runtime.min.js'
+        ]
+      },
+      'ion.rangeSlider': {
+        main: [
+          'js/ion.rangeSlider.min.js',
+          'css/ion.rangeSlider.css'
+
+        ]
       }
-    }), {base: 'bower_components/'})
+    }
+  }), {base: 'bower_components/'})
     .pipe(gulp.dest(_pathToBuild + 'lib/'));
 });
 
+/**
+ * Минификация svg
+ */
+gulp.task('svgo', function () {
+  return gulp.src(_pathToSrc + 'img/*.svg')
+    .pipe(svgmin({js2svg: {pretty: true}}))
+    .pipe(gulp.dest(_pathToBuild + 'img/svg/'));
+});
 
+/**
+ * Svg спрайт
+ */
+gulp.task('svg-sprite', function () {
+  return gulp.src(_pathToSrc + 'img/*.svg')
+    .pipe(svgmin({js2svg: {pretty: false}}))
+    .pipe(svgstore({inlineSvg: true}))
+    .pipe(cheerio(function ($) {
+      $('svg').attr('style', 'position: absolute; width: 0; height: 0;');
+      // $('[fill]').removeAttr('fill');
+      // $('[style]').removeAttr('style');
+    }))
+    .pipe(rename('icons.html'))
+    .pipe(gulp.dest('../public/'));
+});

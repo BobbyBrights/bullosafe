@@ -1,0 +1,50 @@
+$cls = 'irs'
+
+.{$cls}
+  &-line
+    height 4px
+    background-color $border
+    z-index 1
+
+  &-single
+    top -37px
+    font-family $openSans
+    font-size 14px
+    line-height 26px
+    text-align center
+    padding-right 10px
+    padding-left 10px
+    background-color #fff
+    border-radius 3px
+    box-shadow 0 2px 5px #e0e4ea
+    &:after
+      content ''
+      position absolute
+      bottom -4px
+      left calc(50% - 5px)
+      width 0
+      height 0
+      border-style solid
+      border-width 5px 5px 0 5px
+      border-color #fff transparent transparent transparent
+
+  &-slider.single
+    top -5px
+    width 15px
+    height 15px
+    border-radius 50%
+    background-color $btn-green
+
+  &-grid-pol
+  &-min
+  &-max
+    display none
+
+  &-grid-text
+    bottom -5px
+    width 15px
+    height 15px
+    font-size 0
+    border-radius 50%
+    background-color $border
+

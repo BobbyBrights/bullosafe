@@ -10,20 +10,24 @@ html(lang='ru')
     link(rel='stylesheet', href='./static/css/fonts.css')
     link(rel='stylesheet', href='./static/lib/select2/dist/css/select2.min.css')
     link(rel='stylesheet', href='./static/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')
+    link(rel='stylesheet', href='./static/lib/ion.rangeSlider/css/ion.rangeSlider.css')
     link(rel='stylesheet', href='./static/css/style.css')
     block css
 
   +b('body').page
+    include /bundle/__blocks/_mixins/_icon
+    include ../../public/icons.html
+
     block content
 
     block templates
 
-
     script(src='./static/lib/jquery/dist/jquery.min.js')
+    script(src='./static/lib/handlebars/handlebars.min.js')
     script(src='./static/lib/select2/dist/js/select2.full.min.js')
     script(src='./static/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
     script(src='./static/lib/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js')
-    script(src='./static/lib/handlebars/handlebars.min.js')
-    //script(src='./static/lib/handlebars/handlebars.runtime.min.js')
+    script(src='./static/lib/ion.rangeSlider/js/ion.rangeSlider.min.js')
+    script(src='./static/js/svgIcons.js')
     script(src='./static/js/common.js')
     block js

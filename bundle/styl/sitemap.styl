@@ -1,0 +1,51 @@
+$cls = 'sitemap'
+
+.{$cls}
+  &__search
+    margin-bottom 3.8%
+    padding-top 6%
+
+  &__list
+    margin-bottom 9.5%
+    font-size 0
+
+  &__col
+    display inline-block
+    vertical-align top
+    padding-right 10%
+    &:nth-of-type(1)
+      width 55%
+    &:nth-of-type(2)
+      width 45%
+
+  &__title
+    margin-bottom 4.5%
+    font-family $openSans
+    font-weight 700
+
+  &__item
+    &:not(:last-of-type)
+      margin-bottom 16%
+
+  &__link
+    font-size 14px
+    font-family $openSans
+    &:not(:last-of-type)
+      margin-bottom 4.5%
+
+  &__license
+    font-size 0
+
+  &__license-icon
+    display inline-block
+    vertical-align middle
+    margin-right 2.5%
+    fill #9b9b9b
+    opacity 0.33
+
+  &__license-text
+    display inline-block
+    vertical-align middle
+    font-family $openSans
+    font-size 14px
+    color #9b9b9b

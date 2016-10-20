@@ -9,6 +9,23 @@ $(document).ready(function() {
   }
 
   /**
+   * Инициализация RangeSlider
+   */
+  $('.js-progress').ionRangeSlider({
+    type: "single",
+    min: 0,
+    max: 5,
+    step: 1,
+    from: 1,
+    keyboard: true,
+    values: ["1000", "2000", "3000", "4000", "5000"],
+    grid: true,
+    prettify: function (num) {
+      return num + ' &euro;';
+    }
+  });
+
+  /**
    * Разворачивание подробной информации в блоке "Страхование путешественников"
    */
   $('.js-company-more-btn').on('click', function() {
@@ -27,7 +44,6 @@ $(document).ready(function() {
     }
   });
 
-
   /**
    * Добавление нового человека в "Кол-во" застрахованых
    */
@@ -41,7 +57,9 @@ $(document).ready(function() {
     reInit();
   });
 
-
+  /**
+   * Переключение табов
+   */
   $('.js-tabs-item').on('click', function() {
     var tabData = $(this).attr('data-tab');
 
@@ -49,6 +67,12 @@ $(document).ready(function() {
     $(this).addClass('_active');
     $('.js-content-item').removeClass('_active');
     $('.js-content-item[data-content='+ tabData +']').addClass('_active');
-    console.log(tabData)
+  });
+
+  /**
+   * Сворачивание/разворачивание "Дополнительные опции"
+   */
+  $('.js-ao-close').on('click', function() {
+    $(this).parents('.additional-options').toggleClass('_closed');
   });
 });

@@ -1,0 +1,255 @@
+extends /bundle/template/base
+
+include /bundle/__blocks/radio/_radio
+include /bundle/__blocks/checkbox/_checkbox
+
+
+block content
+  +b.page__sidebar
+    +b.tabs
+      +e.header
+        +e.item_fast-buy.js-tabs-item(data-tab='fast-buy')
+          +b.title_size_m Быстрая покупка
+        +e.item_detailed._-active.js-tabs-item(data-tab='detailed')
+          +b.title_size_m Подробное оформление
+      +e.content
+        +e.content-item.js-content-item(data-content='fast-buy')
+          +b.fast-buy
+            +b.solutions.__solutions
+              +b.title_size_l.__title Готовые решения
+              +e.list
+                -
+                  var radioFilter = [
+                    {cls: '_-active', title: 'Виза в Европу', bg: './static/img/bg-solutions-1.jpg'},
+                    {title: 'Страховой полис для поездки в Америку', bg: './static/img/bg-solutions-2.jpg'},
+                    {title: 'Спортивная страховка', bg: './static/img/bg-solutions-3.jpg'},
+                    {title: 'Страховка с покрытием для беременных', bg: './static/img/bg-solutions-4.jpg'}
+                  ]
+                each item in radioFilter
+                  +e.item.js-rf-item(style='background-image:url(' + item.bg + ');')
+                    +e.radio
+                      +radio({name: 'radio-filter'})
+                    +e.type
+                      +b.title_size_m.__type-title!= item.title
+                      +e.type-description Страховой полис с покрытием 30 000 евро минимальным наполнением и самой оптимальной ценой. Подходит для подачи документов на визу в Европу
+            +b.options.__options
+              +b.title_size_l.__title Опции
+              +e.item
+                +e.label Страна
+                +e.select
+                  +b('select').select.js-select(multiple, style='width: 100%')
+                    option Россия
+                    option Астралия
+                    option Албания
+              +e.item_sep
+                +e.label Когда уезжаете?
+                +b.date-field.__leaving
+                  +b.input_size_m.__input.js-datepicker(type='text')
+                  +e.icon
+                +e.traveling
+                  +checkbox({label: 'Я уже путешествую'})
+              +e.item
+                +b.insuranced-ppl.__insuranced-ppl.js-insurance-ppl
+                  +e.title Кол-во застрахованых
+                  +e.item
+                    +e.counter
+                      +checkbox({label: '1й'})
+                    +e.select
+                      +b('select').select.js-select(style='width: 100%')
+                        option 30 лет
+                        option 20 лет
+                        option 10 лет
+                    +e.add-ppl
+                      +b.link_color_green.js-insurance-ppl-add Добавить еще человека
+            +e.submit
+              +b('input').button_size_m._color_green._uppercase.__submit(type='submit') Применить фильтры
+
+        +e.content-item._-active.js-content-item(data-content='detailed')
+          +b.detailed-form
+            +b.options.__options
+              +b.title_size_l.__title Опции
+              +e.item
+                +e.label Страна
+                +e.select
+                  +b('select').select.js-select(multiple, style='width: 100%')
+                    option Россия
+                    option Астралия
+                    option Албания
+              +e.item_sep
+                +e.label Когда уезжаете?
+                +b.date-field.__leaving
+                  +b.input_size_m.__input.js-datepicker(type='text')
+                  +e.icon
+                +e.traveling
+                  +checkbox({label: 'Я уже путешествую'})
+              +e.item
+                +b.insuranced-ppl.__insuranced-ppl.js-insurance-ppl
+                  +e.title Кол-во застрахованых
+                  +e.item
+                    +e.counter
+                      +checkbox({label: '1й'})
+                    +e.select
+                      +b('select').select.js-select(style='width: 100%')
+                        option 30 лет
+                        option 20 лет
+                        option 10 лет
+                    +e.add-ppl
+                      +b.link_color_green.js-insurance-ppl-add Добавить еще человека
+
+            +b.additional-options.__additional-options
+              +e.header
+                +b.title_size_l.__title Дополнительные опции
+                +b.link_color_green.__close.js-ao-close Скрыть
+              +e.body
+                +e.item
+                  +e.label Страховая сумма
+                  +b.radio-buttons
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-30k' name='insurance-sum', checked)
+                      +e('label').label(for='id-insurance-sum-30k') 30 000 &euro;
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-50k' name='insurance-sum')
+                      +e('label').label(for='id-insurance-sum-50k') 50 000 &euro;
+                    +e.item
+                      +e('input').input(type='radio', id='id-insurance-sum-100k' name='insurance-sum')
+                      +e('label').label(for='id-insurance-sum-100k') 100 000 &euro;
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Что входит в медицинское страхование
+                  +b.checkbox-list
+                    each name in ['Репатриация', 'Оплата проезда до больницы', 'Медицинская помощь в результате терактов']
+                      +e.item
+                        +checkbox({label: name})
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Осложнение протекания беременности:
+                  +e.select-help
+                    +b('select').select.js-select(style='width: 100%')
+                    +b.icon_help.__icon-help ?
+                +e.item_sep
+                  +b.title_size_s.__title.__title_sans Страхование при занятиях спортом
+                  +e.select-help
+                    +b('select').select.js-select(style='width: 100%')
+                    +b.icon_help.__icon-help ?
+                +e.item_sep
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование от несчастных случаев'})
+                    +b.icon_help.__icon-help ?
+                  +b.radio-list_horizontal.__radio-list
+                    each radio in ['5000 &euro;', '10000 &euro;', '15000 &euro;']
+                      +e.item
+                        +radio({label: radio, name: 'insurance-аccident'})
+                +e.item_sep
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование багажа'})
+                    +b.icon_help.__icon-help ?
+                  +b.progress.__progress
+                    +e.range
+                      +e.input.js-progress
+                    +e.checkbox-help
+                      +checkbox({label: 'Страхование задержки багажа'})
+                      +b.icon_help.__icon-help ?
+                +e.item
+                  +e.checkbox-help
+                    +checkbox({label: 'Страхование отмены поездки'})
+                    +b.icon_help.__icon-help ?
+                  +b.trip-canceled
+                    +e.input
+                      +b('input').input_size_m(type='text')
+                    +e.checkbox-help
+                      +checkbox({label: 'Страховой случай при амбулаторном лечении'})
+                      +b.icon_help.__icon-help ?
+
+
+
+    +b.helper._-visible
+      +e.item
+        +e.time 4 мин назад
+        +e.answer
+          +e.icon ?
+          +e.text
+            | Это у нас можно. <br> <br>
+            | Делаете взнос и Вы уже клиент страховой фирмы Альбатрос.
+
+
+
+  +b.company-list._-tmpnone
+    +e.item
+      -
+        var companyList = [
+          {logo: 'static/img/img-rosgosstrah.png', price: '1027,4' }
+        ]
+      each company in companyList
+        +b.company.js-company._-open
+          +e.header
+            +e.logo
+              img(src=company.logo)
+            +e.price= company.price
+            +e.buy
+              +b.button_color_green._size_m._uppercase Купить
+          +e.info
+            +e.info-more.js-company-more-btn
+              +b.link_color_green.__info-more-link Подробнее
+                +b('i').icon_pointer-down-green
+            +e.info-expert
+              +e.info-title Рейтинг Эксперта
+              +e.info-rating A++
+            +e.info-asn
+              +e.info-title Рейтинг АСН
+              +e.info-rating 85 Отлично!
+          +e.content.js-company-content
+            +e.pdf-list
+              +e.pdf-item
+                +b.pdf
+                  +e.icon PDF
+                  +b.link_color_green.__link(href='#') Правила страхования
+              +e.pdf-item_sep
+                +b.pdf
+                  +e.icon PDF
+                  +b.link_color_green.__link(href='#') Образев полиса
+            +e.included
+              +b.title_size_m.__included-title Что входит в покрытие
+              +e('table').included-list
+                -
+                  var includedList = [
+                    {name: 'Экстренная медицинская помощь', price: '30 000 &euro;'},
+                    {name: 'Медикаменты', price: '30 000 &euro;'},
+                    {name: 'Медицинское оборудование', price: '30 000 &euro;'},
+                    {name: 'Медицинская транспортировка', price: '30 000 &euro;'},
+                    {name: 'Перевозка останков', price: '30 000 &euro;'},
+                    {name: 'Эвакуация детей', price: '1 000 &euro;'},
+                    {name: 'Стоматология', price: '250 &euro;'},
+                    {name: 'Возвращение из поездки', price: '1 000 &euro;'},
+                    {name: 'Утрата документов', price: '500 &euro;'},
+                    {name: 'Юридическая помощь', price: '1 000 &euro;'},
+                    {name: 'Оплата срочных сообщений', price: '100 &euro;'},
+                    {name: 'Задержка рейса', price: '1 000 &euro;'},
+                    {name: 'Визит третьего лица'}
+                  ]
+                each item in includedList
+                  +e('tr').included-row
+                    +e('td').included-name= item.name
+                    +e('td').included-price!= item.price
+            +e.footer
+              +e.footer-buy
+                +b.button_color_green._size_m._uppercase Купить
+              +e.footer-price!= company.price + ' &#x20bd;'
+
+
+block js
+  script(src='./static/js/select.js')
+  script(src='./static/js/datepicker.js')
+
+block templates
+  template#insurancedPpl
+    +b.insuranced-ppl__item
+      +b.insuranced-ppl__counter
+        +b('label').checkbox
+          +e('input').input(type='checkbox')
+          +e.icon
+          +e.label {{name}}й
+      +b.insuranced-ppl__select
+        +b('select').select.js-select(style='width: 100%')
+          option 30 лет
+          option 20 лет
+          option 10 лет
+      +b.insuranced-ppl__add-ppl
+        +b.link_color_green.js-insurance-ppl-add Добавить еще человека

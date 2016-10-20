@@ -1,0 +1,46 @@
+$cls = 'insurance-types'
+
+.{$cls}
+  padding-top 6.7%
+  padding-right 6.1%
+  padding-left 6.1%
+  font-size 0
+  background-color #f6f7f9
+
+  &__col
+    display inline-block
+    vertical-align top
+    margin-bottom 10%
+    padding-right 5%
+    &:nth-of-type(1)
+      width 57%
+    &:nth-of-type(2)
+      width 43%
+
+  &__item
+    &:not(:last-of-type)
+      margin-bottom 16px
+
+  &__icon
+    display inline-block
+    vertical-align top
+    width 30px
+    margin-right 13px
+    text-align center // выравнять svg по центру
+    .icon_house-man
+    .icon_heart-purse
+    .icon_car
+      margin-top 7px
+    .icon_heart-rating
+      margin-top 5px
+
+  &__link
+    display inline-block
+    vertical-align top
+    width calc(100% - 43px)
+    padding-top 5px
+    font-size 20px
+    font-weight 500
+    line-height 23px
+    .link
+      font-family $dinCondensed

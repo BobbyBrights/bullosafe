@@ -18,6 +18,7 @@
     "jquery": "^3.1.1",
     "select2": "^4.0.3",
     "bootstrap-datepicker": "^1.6.4",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "ion.rangeSlider": "^2.1.4"
   }
 }

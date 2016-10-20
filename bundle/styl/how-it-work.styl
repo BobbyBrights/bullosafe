@@ -1,0 +1,47 @@
+$cls = 'how-it-work'
+
+.{$cls}
+  padding-top 8.3%
+  padding-right 4.1%
+  padding-bottom 3.5%
+  padding-left 4.1%
+  background-color #fff
+  font-size 0
+
+  &__item
+    padding-bottom 45px
+    &:not(:last-of-type)
+      margin-bottom 42px
+      border-bottom 1px dashed $border
+
+  &__title
+    margin-bottom 10px
+    font-weight 500
+
+  &__info
+    display inline-block
+    vertical-align top
+    width 80%
+    padding-right 10%
+
+  &__icon
+    display inline-block
+    vertical-align top
+    width 20%
+    .icon
+      &_how-it-works
+        width 78px
+        height 103px
+      &_purse
+        width 79px
+        height 99px
+        margin-top 10px
+      &_list
+        width 70px
+        height 94px
+        margin-top 22px
+        margin-left 5px
+
+  &__text
+    font-family $openSans
+    font-size 14px

@@ -3,12 +3,26 @@ $cls = 'link'
 .{$cls}
   link-reset()
   font-family $openSans
-  transition color .2s ease
+  transition color .2s ease, border-bottom-color .2s ease
 
+  for val in solid dashed dotted
+    &_line_{val}
+      border-style val
+      border-bottom-width 1px
 
   &_color
     &_green
       color $link-green
-      &:hover {
-        color darken($link-green, 30%)
-      }
+      &:hover
+        color darken(@color, 30%)
+    &_black
+      color $black
+      border-bottom-color $green
+      &:hover
+        color lighten(@color, 25%)
+        border-bottom-color lighten(@border-bottom-color, 10%)
+    &_gray
+      color #9b9b9b
+      &:hover
+        color lighten(@color, 25%)
+

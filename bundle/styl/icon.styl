@@ -4,7 +4,7 @@ $cls = 'icon'
   display inline-block
   vertical-align middle
   background-repeat no-repeat
-  cursor pointer
+  transition fill .2s ease
 
   &_pointer-down-green
     width 12px
@@ -12,11 +12,13 @@ $cls = 'icon'
     margin-left 5px
     background-image url(../img/icon-pointer-down-green.png)
     background-size 12px 8px
+    cursor pointer
 
   &_help
     vertical-align top
     width 24px
     height @width
+    font-family $openSans
     font-size 14px
     line-height @width
     text-align center
@@ -24,3 +26,69 @@ $cls = 'icon'
     color #fff
     background-color alpha(#37475d, 40%)
     border-radius 50%
+    cursor pointer
+
+  &_color_gray
+    fill $border
+
+  &_diplomat
+    width 29px
+    height 26px
+  &_heart
+    width 28px
+    height 24px
+  &_house
+    width 27px
+    height 27px
+  &_heart-rating
+    width 35px
+    height 26px
+    margin-left -5px
+  &_house-man
+    width 34px
+    height 25px
+    margin-left -4px
+  &_car
+    width 33px
+    height 19px
+    margin-left -3px
+  &_heart-purse
+    width 31px
+    height 26px
+    margin-left -8px
+  &_fb
+    width 11px
+    height 23px
+    &:hover
+      fill #3b5998
+  &_vk
+    width 24px
+    height 13px
+    &:hover
+      fill #45668e
+  &_gplus
+    width 23px
+    height 14px
+    &:hover
+      fill #dd4b39
+  &_twi
+    width 21px
+    height 16px
+    &:hover
+      fill #00aced
+  &_youtube
+    width 21px
+    height 14px
+    &:hover
+      fill #bb0000
+  &_in
+    width 20px
+    height 19px
+    &:hover
+      fill #007bb6
+  &_loupe
+    width 15px
+    height 15px
+  &_page
+    width 23px
+    height 30px
