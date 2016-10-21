@@ -34,12 +34,22 @@ $cls = 'button'
     font-size 20px
     font-weight 400
     letter-spacing 1.51px
+  &_size_l
+    button-height(50px, 20px)
+    font-size 20px
+    font-weight 500
+    letter-spacing 1.51px
 
   &_color
     &_green
       background-color $btn-green
       &:hover
         background-color darken($btn-green, 7%)
+    &_transparent
+      background-color transparent
+      border 1px solid #fff
+      &:hover
+        background-color rgba(255,255,255 .2)
 
   &_uppercase
     text-transform uppercase

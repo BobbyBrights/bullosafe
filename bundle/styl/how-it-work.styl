@@ -45,3 +45,22 @@ $cls = 'how-it-work'
   &__text
     font-family $openSans
     font-size 14px
+    line-height 20px
+
+
+@media $mDesktop
+  .{$cls}
+    padding-top 11.8%
+    padding-right 5%
+    padding-left 6.7%
+
+    &__title
+      margin-bottom 2.7%
+
+    &__info
+      padding-right 8%
+
+    &__item
+      padding-bottom 5%
+      &:not(:last-of-type)
+        margin-bottom 5%

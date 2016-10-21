@@ -49,3 +49,16 @@ $cls = 'sitemap'
     font-family $openSans
     font-size 14px
     color #9b9b9b
+
+
+@media $mDesktop
+  .{$cls}
+    &__search
+      margin-bottom 5%
+      padding-top 7%
+    &__list
+      margin-bottom 8.5%
+    &__col
+      padding-right 0
+    &__item:not(:last-of-type)
+      margin-bottom 18%

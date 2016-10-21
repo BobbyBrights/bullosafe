@@ -1,0 +1,53 @@
+$cls = 'filter'
+
+.{$cls}
+  font-size 0
+
+  &__label
+    margin-bottom 3.5%
+    font-family $openSans
+    font-size 14px
+    color #fff
+
+  &__country
+    display inline-block
+    vertical-align top
+    width 32%
+    margin-right 9.5%
+
+  &__dates
+    display inline-block
+    vertical-align top
+    width 32.5%
+
+  &__submit
+    position relative
+    width 38%
+    min-width 200px
+    margin-top 5%
+    .button
+      width 100%
+      padding-right 8.5%
+      padding-left 8.5%
+
+  &__submit-icon
+    position absolute
+    right 7%
+    top 50%
+    transform translateY(-50%)
+    .icon
+      width 8px
+      height 13px
+      fill #fff
+
+
+@media $mDesktop
+  .{$cls}
+    &__country
+      width 41.5%
+      margin-right 5.5%
+    &__dates
+      width 53%
+    &__submit
+      width 60%
+      margin-top 7%

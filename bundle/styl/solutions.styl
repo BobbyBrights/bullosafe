@@ -24,12 +24,13 @@ $cls = 'solutions'
     display inline-block
     vertical-align top
     width auto
-    margin-right 17px
+    //margin-right 17px change to %
 
   &__type
     display inline-block
     vertical-align top
-    width calc(100% - 43px) //radiobutton width + margin-right
+    width calc(100% - 45px) //radiobutton width + margin-right
+    margin-bottom 1%
     padding-top 4px
     cursor pointer
 
@@ -56,11 +57,17 @@ $cls = 'solutions'
 @media $mDesktop
   .{$cls}
     &__title
-      margin-bottom 11px
+      margin-bottom 6%
 
     &__item
-      margin-bottom 10px
+      margin-bottom 5%
       padding 19px 14px 0
 
     &__type
-      padding-top 1px
+      padding-top 3px
+
+    &__type-title
+      margin-bottom 5%
+
+    &__radio
+      margin-right 12px

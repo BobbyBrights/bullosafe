@@ -66,7 +66,7 @@ gulp.task('watch', ['stylus'], function () {
 
 
   gulp.watch(_pathToSrc + '**/*.styl', ['stylus']);
-  // gulp.watch(_pathToSrc + 'img/*', ['imagemin']);
+  gulp.watch(_pathToSrc + 'img/*', ['imagemin']);
   gulp.watch(_pathToSrc + 'img/*.svg', ['svgo']);
   gulp.watch(_pathToSrc + 'img/*.svg', ['svg-sprite']);
 });
@@ -90,17 +90,17 @@ gulp.task('webserver', function () {
 /**
  * Минификация изображений
  */
-// gulp.task('imagemin', function () {
-//   gulp.src(_pathToSrc + 'img/*')
-//     .pipe(imagemin({
-//       plugins: [
-//         imagemin.svgo({})
-//       ],
-//       progressive: true,
-//       interlaced: true
-//     }))
-//     .pipe(gulp.dest(_pathToBuild + 'img/'));
-// });
+gulp.task('imagemin', function () {
+  gulp.src(_pathToSrc + 'img/*')
+    .pipe(imagemin({
+      plugins: [
+        imagemin.svgo({})
+      ],
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest(_pathToBuild + 'img/'));
+});
 
 /**
  * Watcher .pug файлов
@@ -174,15 +174,6 @@ gulp.task('bower', function () {
     }
   }), {base: 'bower_components/'})
     .pipe(gulp.dest(_pathToBuild + 'lib/'));
-});
-
-/**
- * Минификация svg
- */
-gulp.task('svgo', function () {
-  return gulp.src(_pathToSrc + 'img/*.svg')
-    .pipe(svgmin({js2svg: {pretty: true}}))
-    .pipe(gulp.dest(_pathToBuild + 'img/svg/'));
 });
 
 /**

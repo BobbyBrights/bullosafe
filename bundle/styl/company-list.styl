@@ -1,5 +1,22 @@
 $cls = 'company-list'
 
 .{$cls}
+  height 100%
+  background url(../img/bg-calc.jpg) repeat-y left top
+  background-size cover
+
+  &__title
+    margin-bottom 4%
+    padding-top 5.2%
+    padding-left 3.4%
+    color #fff
+    font-weight 500
+
   &__item
-    margin-bottom 15px
+    width 93%
+    margin 0 auto 15px
+
+@media $mDesktop
+  .{$cls}
+    &__title
+      margin-bottom 5.3%

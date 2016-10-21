@@ -2,122 +2,166 @@ extends /bundle/template/base
 
 
 block content
-  +e.content
-    +b.insurance-types
-      +e.col
-        -
-          var typeList = [
-            {icon: 'diplomat', label: 'Туристическое страхование'},
-            {icon: 'heart', label: 'Страхование жизни'},
-            {icon: 'house', label: 'Страхование имущества'},
-            {icon: 'heart-rating', label: 'Накопительное <br> страхование жизни'}
-          ]
-        each type in typeList
-          +e.item
-            +e.icon
-              +icon(type.icon)
-            +e.link
-              +b.link_color_black._line_solid(href='#')!= type.label
-      +e.col
-        -
-          var typeList = [
-            {icon: 'house-man', label: 'Страхования заемщика ипотеки'},
-            {icon: 'car', label: 'Страхование залогового имущества'},
-            {icon: 'heart-purse', label: 'Инвестиционное страхование  жизни'}
-          ]
-        each type in typeList
-          +e.item
-            +e.icon
-              +icon(type.icon)
-            +e.link
-              +b.link_color_black._line_solid(href='#')= type.label
-
-    +b.insurance-company
-      +e.header
-        +b.title_size_l.__title Страховые компании
-        +e.more
-          +b.link_color_green(href='#') Подробнее о страховых компаниях
-      +e.list
-        -
-          companyList = [
-            {img: './static/img/img-erv.png'},
-            {img: './static/img/img-vtb.png'},
-            {img: './static/img/img-renesans.png'},
-            {img: './static/img/img-alpha.png'},
-            {img: './static/img/img-opora.png'},
-            {img: './static/img/img-erv.png'},
-            {img: './static/img/img-rosgosstrah.png'},
-            {img: './static/img/img-renesans.png'},
-            {img: './static/img/img-erv.png'},
-          ]
-        each company in companyList
-          +e.item
-            img(src=company.img)
-
-    +b.video-banner
-
-    +b.how-it-work
-      -
-        var itemList = [
-          {title: 'Как это работает?', icon: 'how-it-works', text: 'Выбирайте вариант страховки, оплачивайте удобным для вас способом, получите полис на email и просто распечатайте его. Электронный страховой полис принимается всеми визовыми центрами.'},
-          {title: 'Никаких переплат!', icon: 'purse', text: 'Мы продаем полисы по действующим тарифам страховых компаний и даже дешевле, потому что мы лидеры на рынке электронного страхования, и страховые компании конкурируют между собой, чтобы привлечь клиентов.'},
-          {title: 'Честность превыше всего', icon: 'list', text: 'Наша цель – показать вам все условия страхования честно и открыто, сообщить о любых возможных ограничениях в условиях страхования, чтобы вы были уверенны в своей страховке и понимали, на что можете рассчитывать. Для нас это действительно важно!'}
-        ]
-      each item in itemList
-        +e.item
-          +e.info
-            +b.title_size_m.__title= item.title
-            +e.text= item.text
-          +e.icon
-            +icon(item.icon)
-
-
-    +b('footer').footer.__footer
-      +e.social
-        +e.logo
-          +e.logo-icon
-            +icon('logo')
-          +e.logo-text © 2016 <br> BulloSafe
-        +b.socials.__social-list
-          each icon in ['fb', 'vk', 'gplus', 'twi', 'youtube', 'in']
+  +e.inner_index
+    +e.left
+      +b.insurance-types
+        +e.col
+          -
+            var typeList = [
+              {icon: 'diplomat', label: 'Туристическое страхование'},
+              {icon: 'heart', label: 'Страхование жизни'},
+              {icon: 'house', label: 'Страхование имущества'},
+              {icon: 'heart-rating', label: 'Накопительное <br> страхование жизни'}
+            ]
+          each type in typeList
             +e.item
-              +b.link.__link(href='#')
-                +icon(icon)
-      +b.contacts.__contacts
-        +e.phone
-          +b.title_size_s.__title Телефон
-          +e.text + 7 (800) 999 11 11
-        +e.email
-          +b.title_size_s.__title E-mail
-          +e.text info@bullosafe.ru
-      +b.sitemap.__sitemap
-        +b.search.__search
-          +e.input
-            +b('input').input_size_s
-            +e.icon
-              +icon('loupe', 'icon_color_gray')
+              +e.icon
+                +icon(type.icon)
+              +e.link
+                +b.link_color_black._line_solid(href='#')!= type.label
+        +e.col
+          -
+            var typeList = [
+              {icon: 'house-man', label: 'Страхования заемщика ипотеки'},
+              {icon: 'car', label: 'Страхование залогового имущества'},
+              {icon: 'heart-purse', label: 'Инвестиционное страхование  жизни'}
+            ]
+          each type in typeList
+            +e.item
+              +e.icon
+                +icon(type.icon)
+              +e.link
+                +b.link_color_black._line_solid(href='#')= type.label
+
+      +b.insurance-company
+        +e.header
+          +b.title_size_l.__title Страховые компании
+          +e.more
+            +b.link_color_green(href='#') Подробнее о страховых компаниях
         +e.list
-          +e.col
+          -
+            companyList = [
+              {img: './static/img/img-erv.png'},
+              {img: './static/img/img-vtb.png'},
+              {img: './static/img/img-renesans.png'},
+              {img: './static/img/img-alpha.png'},
+              {img: './static/img/img-opora.png'},
+              {img: './static/img/img-erv.png'},
+              {img: './static/img/img-rosgosstrah.png'},
+              {img: './static/img/img-renesans.png'},
+              {img: './static/img/img-erv.png'},
+            ]
+          each company in companyList
             +e.item
-              +b.title_size_s.__title Важное
-              each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
-                +e.link
-                  +b.link_color_gray(href='#')= title
-            +e.item
-              +b.title_size_s.__title  Полезное
-              each title in ['Как это работает?', 'Что делать при страховом случае?', 'Страхование компании?']
-                +e.link
-                  +b.link_color_gray(href='#')= title
-          +e.col
-            +e.item
-              +b.title_size_s.__title Страховые программы
-              each title in ['Туристическое страхование', 'Страхование жизни', 'Страхование имущества', 'Страхования заемщика ипотеки', 'Страхование залогового имущества']
-                +e.link
-                  +b.link_color_gray(href='#')= title
-        +e.license
-          +e.license-icon
-            +icon('page')
-          +e.license-text Лицензия ЦБ № 345667457456745
+              img(src=company.img)
+
+      +b.video-banner
+
+      +b.how-it-work
+        -
+          var itemList = [
+            {title: 'Как это работает?', icon: 'how-it-works', text: 'Выбирайте вариант страховки, оплачивайте удобным для вас способом, получите полис на email и просто распечатайте его. Электронный страховой полис принимается всеми визовыми центрами.'},
+            {title: 'Никаких переплат!', icon: 'purse', text: 'Мы продаем полисы по действующим тарифам страховых компаний и даже дешевле, потому что мы лидеры на рынке электронного страхования, и страховые компании конкурируют между собой, чтобы привлечь клиентов.'},
+            {title: 'Честность превыше всего', icon: 'list', text: 'Наша цель – показать вам все условия страхования честно и открыто, сообщить о любых возможных ограничениях в условиях страхования, чтобы вы были уверенны в своей страховке и понимали, на что можете рассчитывать. Для нас это действительно важно!'}
+          ]
+        each item in itemList
+          +e.item
+            +e.info
+              +b.title_size_m.__title= item.title
+              +e.text= item.text
+            +e.icon
+              +icon(item.icon)
 
 
+      +b('footer').footer.__footer
+        +e.social
+          +e.logo
+            +e.logo-icon
+              +icon('logo')
+            +e.logo-text © 2016 <br> BulloSafe
+          +b.socials.__social-list
+            each icon in ['fb', 'vk', 'gplus', 'twi', 'youtube', 'in']
+              +e.item
+                +b.link.__link(href='#')
+                  +icon(icon)
+        +b.contacts.__contacts
+          +e.phone
+            +b.title_size_s.__title Телефон
+            +e.text + 7 (800) 999 11 11
+          +e.email
+            +b.title_size_s.__title E-mail
+            +e.text info@bullosafe.ru
+        +b.sitemap.__sitemap
+          +b.search.__search
+            +e.input
+              +b('input').input_size_s
+              +e.icon
+                +icon('loupe', 'icon_color_gray')
+          +e.list
+            +e.col
+              +e.item
+                +b.title_size_s.__title Важное
+                each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+              +e.item
+                +b.title_size_s.__title  Полезное
+                each title in ['Как это работает?', 'Что делать при страховом случае?', 'Страхование компании?']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+            +e.col
+              +e.item
+                +b.title_size_s.__title Страховые программы
+                each title in ['Туристическое страхование', 'Страхование жизни', 'Страхование имущества', 'Страхования заемщика ипотеки', 'Страхование залогового имущества']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+          +e.license
+            +e.license-icon
+              +icon('page')
+            +e.license-text Лицензия ЦБ № 345667457456745
+  
+    +e.right
+      +b.insurance-find
+        +e.type(style='background-image: url(./static/img/bg-find1.jpg);')
+          +e.header
+            +b.title_size_l._uppercase.__title Страхование путешествеников
+            +e.header-icon
+              +icon('diplomat')
+          +e.body
+            +b.filter.__filter
+              +e.country
+                +b.title_size_s.__label Страна путешествия
+                +e.input
+                  +b('input').input_size_m._color_transparent(type='text')
+              +e.dates
+                +b.title_size_s.__label Даты поездки
+                +b.date-field.__input
+                  +b.input_size_m._color_transparent.js-datepicker(type='text')
+                  +e.icon
+                    +icon('calendar')
+              +e.submit
+                +b.button_size_l._color_transparent._uppercase(type='submit') Найти страховку
+                +e.submit-icon
+                  +icon('triangle-pointer')
+        -
+          var typeList = [
+            {title: 'Страхование залогового имущества', icon: 'car', img: '2'},
+            {title: 'Страхование заемщика', icon: 'house-man', img: '3'},
+            {title: 'Страхование имущества', icon: 'house', img: '4'},
+            {title: 'Страхование здоровья', icon: 'heart', img: '5'},
+            {title: 'Инвестиционное страхование жизни', icon: '', img: '6'},
+            {title: 'Накопительное страхование жизни', icon: '', img: '7'}
+          ]
+        each type in typeList
+          +e.type_soon(style='background-image: url(./static/img/bg-find' + type.img + '.jpg);')
+            +e.header
+              +b.title_size_l._uppercase.__title= type.title
+              if type.icon
+                +e.header-icon
+                  +icon(type.icon)
+              +e.soon
+                +b.title_size_m.__soon-title Скоро
 
+
+block js
+  script(src='./static/js/datepicker.js')

@@ -1,0 +1,93 @@
+$cls = 'insurance-find'
+
+.{$cls}
+  height 100%
+  background-color #262a30
+
+  &__header
+    position relative
+    margin-bottom 4.5%
+
+  &__header-icon
+    position absolute
+    top -10px
+    right 0
+    fill #fff
+    .icon
+      &_diplomat
+        width 49px
+        height 43px
+      &_heart
+        stroke #fff
+
+  &__type
+    padding-top 4.4%
+    padding-bottom 4.5%
+    padding-right 5%
+    padding-left 5.4%
+    background-repeat no-repeat
+    background-position top center
+    background-size cover
+    &_soon
+      padding-top 7.2%
+      padding-bottom 3.5%
+      .{$cls}
+        &__header-icon
+          top 50%
+          right 20%
+          opacity 0.4
+          transform translateY(-50%)
+          .icon_car
+            width 63px
+            height 37px
+          .icon_house-man
+            width 59px
+            height 45px
+          .icon_house
+            width 48px
+            height 48px
+          .icon_heart
+            width 53px
+            height 47px
+
+
+  &__title
+    color #fff
+    font-weight 500
+
+  &__soon
+    position absolute
+    top 50%
+    right -5.6%
+    height 50px
+    width 21%
+    padding-left 6%
+    background-color $green
+    border-top-left-radius 56px
+    border-bottom-left-radius 56px
+    transform translateY(-50%)
+
+  &__soon-title.title
+    color #fff
+    font-weight 500
+    line-height 50px
+
+@media $mDesktop
+  .{$cls}
+    &__type
+      padding-top 6.9%
+      padding-bottom 7.5%
+      padding-left 8.4%
+      &_soon
+        padding-top 9%
+        padding-bottom 9%
+        .{$cls}__header
+          margin-bottom 0
+
+    &__header
+      margin-bottom 7.5%
+      padding-right 36%
+
+    &__soon
+      right -5.7%
+      width 24%
