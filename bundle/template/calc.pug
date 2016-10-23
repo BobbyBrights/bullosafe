@@ -4,6 +4,48 @@ include /bundle/__blocks/radio/_radio
 include /bundle/__blocks/checkbox/_checkbox
 
 
+block header
+  +b.header
+    +b.header-left.__left
+      +e.menu
+        +e.accordion
+        +e.icon-loupe
+          +icon('loupe')
+      +e.logo
+        +e.logo-icon
+          +icon('logo')
+        +e.logo-text
+          +e.text-bullo
+            +icon('text-bullo')
+          +e.text-safe
+            +icon('text-safe')
+          +e.text-broker Страховой брокер
+      +e.how-it-work
+        +e.link
+          +b.link_color_green(href='#') Как это работает?
+        +e.link
+          +b.link_color_green(href='#') Что делает при страховом случае?
+
+    +e.right
+      +b.header-right
+        +b.feedback.__feedback
+          +e.item
+            +e.icon
+              +icon('russia')
+            +e.info
+              +e.title Бесплатняй по России
+              +b.link.__phone(href='tel:+78009991111') 8 800 999 11 11
+          +e.item
+            +e.icon
+              +icon('moscow')
+            +e.info
+              +e.title Для Москвы
+              +b.link.__phone(href='tel:+74951501511') 8 495 150 15 11
+        +b.hotline.__hotline
+          +e.icon
+            +icon('woman')
+            +e.online
+
 block content
   +e.inner
     +e.left

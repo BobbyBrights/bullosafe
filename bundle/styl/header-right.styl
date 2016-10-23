@@ -1,0 +1,23 @@
+$cls = 'header-right'
+
+.{$cls}
+  display table
+  width 100%
+  height 100%
+  border-spacing 0
+
+  &__feedback
+    display table-cell
+    vertical-align middle
+    width 87.2%
+
+  &__hotline
+    display table-cell
+    vertical-align middle
+    width 12.8%
+
+
+@media $mDesktop
+  .{$cls}
+    &__feedback
+      width 48%

@@ -1,0 +1,26 @@
+$cls = 'hotline'
+
+.{$cls}
+  height 100%
+  background-color $black
+  opacity .9
+  cursor pointer
+
+  &__icon
+    position relative
+    width 34px
+    height 42px
+    margin auto
+    .icon_woman
+      width 34px
+      height 42px
+
+  &__online
+    position absolute
+    bottom 0
+    right 0
+    width 11px
+    height @width
+    background-color $green
+    border 1px solid #fff
+    border-radius 50%

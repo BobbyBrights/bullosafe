@@ -1,0 +1,58 @@
+$cls = 'feedback'
+
+.{$cls}
+  padding-top 4.6%
+  padding-left 8.4%
+  padding-bottom 4%
+  font-size 0
+  background-color #3b424b
+
+  &__item
+    display inline-block
+    vertical-align top
+    font-size 0
+    white-space nowrap
+    &:not(:last-of-type)
+      margin-right 8.6%
+
+  &__icon
+    display inline-block
+    vertical-align top
+    margin-right 12px
+    .icon_russia
+      width 65px
+      height 47px
+    .icon_moscow
+      width 53px
+      height 45px
+
+  &__info
+    display inline-block
+    vertical-align top
+    width calc(100% - 77px)
+
+  &__title
+    margin-bottom 5px
+    font-family $openSans
+    font-size 12px
+    line-height 15px
+    color #9b9b9b
+
+  &__phone
+    font-family $dinCondensed !important
+    font-size 24px
+    font-weight 500
+    line-height 26px
+    color #fff
+    text-transform uppercase
+    border-bottom 1px dashed $green !important
+
+
+@media $mDesktop
+  .{$cls}
+    padding-top 4.5%
+    padding-left 8%
+    &__icon
+      display none
+    &__item:not(:last-of-type)
+      margin-right 11.2%

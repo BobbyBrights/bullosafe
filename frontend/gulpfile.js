@@ -67,7 +67,6 @@ gulp.task('watch', ['stylus'], function () {
 
   gulp.watch(_pathToSrc + '**/*.styl', ['stylus']);
   gulp.watch(_pathToSrc + 'img/*', ['imagemin']);
-  gulp.watch(_pathToSrc + 'img/*.svg', ['svgo']);
   gulp.watch(_pathToSrc + 'img/*.svg', ['svg-sprite']);
 });
 

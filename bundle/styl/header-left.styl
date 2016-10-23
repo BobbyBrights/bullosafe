@@ -1,0 +1,110 @@
+$cls = 'header-left'
+
+.{$cls}
+  padding-top 21px
+  padding-bottom 18px
+  padding-left 45px
+  font-size 0
+
+  &__menu
+    display inline-block
+    vertical-align top
+    width 5%
+    .icon_loupe
+      width 19px
+      height 19px
+      fill #77bc1f
+
+  &__accordion
+    width 25px
+    height 20px
+    margin-bottom 25px
+    cursor pointer
+    &:before
+      content ''
+      display block
+      width 100%
+      height 3px
+      box-shadow 0 3px #77bc1f, 0 11px #77bc1f, 0 19px #77bc1f
+      border-radius 2px
+
+  &__icon-loupe
+    cursor pointer
+
+  &__logo
+    display inline-block
+    vertical-align top
+    width 38%
+    padding-left 5%
+    font-size 0
+    .icon_logo
+      width 52px
+      height 74px
+
+  &__logo-icon
+    display inline-block
+    vertical-align top
+    width 52px
+    margin-right 12px
+
+  &__logo-text
+    display inline-block
+    vertical-align top
+    width calc(100% - 64px)
+    padding-top 9px
+
+  &__text-bullo
+    display inline-block
+    vertical-align top
+    margin-right 5px
+    .icon_text-bullo
+      width 63px
+      height 24px
+
+  &__text-safe
+    display inline-block
+    vertical-align top
+    .icon_text-safe
+      width 51px
+      height 24px
+
+  &__text-broker
+    margin-top 10px
+    font-size 14px
+    line-height 15px
+    font-weight 500
+    color #77bc1f
+    text-transform uppercase
+    letter-spacing 0.7px
+
+  &__how-it-work
+    display inline-block
+    vertical-align top
+
+  &__how-it-work
+    display inline-block
+    vertical-align top
+    width 53%
+    padding-top 14px
+    padding-left 7.5%
+
+  &__link
+    font-size 14px
+    font-family $openSans
+    &:not(:last-of-type)
+      margin-bottom 5px
+
+
+@media $mDesktop
+  .{$cls}
+    padding-top 24px
+    padding-bottom 14px
+    &__logo
+      width 54%
+      padding-left 9%
+    &__how-it-work
+      width 40%
+      padding-top 4px
+      padding-left 7%
+    &__link:not(:last-of-type)
+      margin-bottom 14px

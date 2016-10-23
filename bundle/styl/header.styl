@@ -1,0 +1,26 @@
+$cls = 'header'
+
+.{$cls}
+  display table
+  width 100%
+  height 113px
+  border-spacing 0
+
+  &__left
+    display table-cell
+    vertical-align top
+    width 44.5%
+    height 100%
+
+  &__right
+    display table-cell
+    vertical-align top
+    width 55.5%
+    height 100%
+
+@media $mDesktop
+   .{$cls}
+     &__left
+       width 48%
+     &__right
+       width 52%
