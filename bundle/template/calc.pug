@@ -117,9 +117,96 @@ block content
                     +b.button_color_green._size_m._uppercase Купить
                   +e.footer-price!= company.price + ' &#x20bd;'
 
+        +b.company-chosen-list
+          +e.item
+            +e.item-header
+             +b.title_size_l.__title Вы выбрали:
+             +e.back-to-top.js-back-to-top Вернуться к выбору
+            +b.company_chosen.js-company
+              +e.header
+                +e.logo
+                  img(src='static/img/img-opora.png')
+                +e.price 927,4 &#8381;
+                +e.chosen
+                  +e.chosen-icon
+                    +icon('check')
+              +e.info
+                +e.info-more.js-company-more-btn
+                  +b.link_color_green.__info-more-link Подробнее
+                    +b('i').icon_pointer-down-green
+                +e.info-expert
+                  +e.info-title Рейтинг Эксперта
+                  +e.info-rating A++
+                +e.info-asn
+                  +e.info-title Рейтинг АСН
+                  +e.info-rating 85 Отлично!
+              +e.content.js-company-content
+                +e.pdf-list
+                  +e.pdf-item
+                    +b.pdf
+                      +e.icon PDF
+                      +b.link_color_green.__link(href='#') Правила страхования
+                  +e.pdf-item_sep
+                    +b.pdf
+                      +e.icon PDF
+                      +b.link_color_green.__link(href='#') Образев полиса
+                +b.tabs_company
+                  +e.header
+                    +e.item_included.js-tabs-item(data-tab='included')
+                      +b.title_size_m Что входит
+                    +e.item_what-to-do._-active.js-tabs-item(data-tab='what-to-do')
+                      +b.title_size_m Действия при страховом случае
+                  +e.content
+                    +e.content-item.js-content-item(data-content='included')
+                      +b.company__included
+                        +b.title_size_m.company__included-title Что входит в покрытие
+                        +b('table').company__included-list
+                          -
+                            var includedList = [
+                            {name: 'Экстренная медицинская помощь', price: '30 000 &euro;'},
+                            {name: 'Медикаменты', price: '30 000 &euro;'},
+                            {name: 'Медицинское оборудование', price: '30 000 &euro;'},
+                            {name: 'Медицинская транспортировка', price: '30 000 &euro;'},
+                            {name: 'Перевозка останков', price: '30 000 &euro;'},
+                            {name: 'Эвакуация детей', price: '1 000 &euro;'},
+                            {name: 'Стоматология', price: '250 &euro;'},
+                            {name: 'Возвращение из поездки', price: '1 000 &euro;'},
+                            {name: 'Утрата документов', price: '500 &euro;'},
+                            {name: 'Юридическая помощь', price: '1 000 &euro;'},
+                            {name: 'Оплата срочных сообщений', price: '100 &euro;'},
+                            {name: 'Задержка рейса', price: '1 000 &euro;'},
+                            {name: 'Визит третьего лица'}
+                            ]
+                          each item in includedList
+                            +b('tr').company__included-row
+                              +b('td').company__included-name= item.name
+                              +b('td').company__included-price!= item.price
+                    +e.content-item._-active.js-content-item(data-content='what-to-do')
+                      +b.what-to-do
+                        p Позвоните в сервисный центр по номерам телефонов, указанным в страховом полисе или информации по страхованию, будьте готовы сообщить следующую информацию:
+                        ul
+                          li Фамилия, Имя
+                          li Номер страхового полиса или номер информации по страхованию
+                          li Местонахождение и контактный телефон
+                          li Обстоятельства, при которых наступил страховой случай
+                          li Какая помощь требуется
+                        +e.gray
+                          p Важно!
+                          p  Строго следуйте рекомендациям сотрудников Сервисного центра.
+                          p  В случае невозможности связаться с сервисным центром при наступлении страхового случая, страховая компания возместит расходы
+                +e.footer
+                  +e.phones
+                    +e.phones-item
+                      +e.phones-title Сервисный центр СК «Опора»
+                      +e.phones-number +7 (495) 123 45 67
+                    +e.phones-item
+                      +e.phones-title Сервисный центр Bullo.Safe
+                      +e.phones-number 8 (800) 123 45 67
+
+
     +e.right
       +e.right-inner
-        +b.tabs
+        +b.tabs.__tabs
           +e.header
             +e.item_fast-buy._-active.js-tabs-item(data-tab='fast-buy')
               +b.title_size_m Быстрая покупка
@@ -273,6 +360,120 @@ block content
                           +checkbox({label: 'Страховой случай при амбулаторном лечении'})
                           +b.icon_help.__icon-help ?
 
+          +b.dropdown._-open
+            +e.header
+              +b.title_size_l.__title Параметры поиска
+              +e.icon
+                +icon('triangle-pointer')
+            +e.content
+              +b.title_size_l.__title Данные о путешественниках
+              +b.travelers-data
+                +e.added-list
+                  +e.added-item Ivanov Ivan 15.05.1976
+                  +e.added-item Svetlana Konuhova 15.05.1986
+                +e.add-card-list.js-travelers-list
+                  +b.add-card.__add-card
+                    +e.counter 1
+                    +e.close.js-add-card-close
+                      +icon('close')
+                    +e.last-name
+                      +e.label  Фамилия латиницей
+                      +e.input
+                        +b.input_size_m(type='text')
+                    +e.first-name
+                      +e.label Имя латиницей
+                      +e.input
+                        +b.input_size_m(type='text')
+                    +e.birthday
+                      +e.label Дата рождение
+                      +b.date-field
+                        +b.input_size_m.__input.js-datepicker(type='text')
+                        +e.icon
+                          +icon('calendar')
+                  +b.add-card.__add-card
+                    +e.counter 2
+                    +e.close.js-add-card-close
+                      +icon('close')
+                    +e.last-name
+                      +e.label  Фамилия латиницей
+                      +e.input
+                        +b.input_size_m(type='text')
+                    +e.first-name
+                      +e.label Имя латиницей
+                      +e.input
+                        +b.input_size_m(type='text')
+                    +e.birthday
+                      +e.label Дата рождение
+                      +b.date-field
+                        +b.input_size_m.__input.js-datepicker(type='text')
+                        +e.icon
+                          +icon('calendar')
+                +e.add-new
+                  +b.button._color_gray.js-add-new-traveler
+                    +icon('man')
+                    | Добавить еще путешественника
+
+                +e.pay
+                  +e.pay-price
+                    +e.pay-price-title Стоиомсть страховки
+                    +e.pay-price-number 926,4 ₽
+                  +e.pay-btn
+                    +b.button_size_l._color_green._uppercase(type='submit') Оплатить страховку
+                    +e.submit-icon
+                      +icon('triangle-pointer')
+
+          +b.dropdown._-open
+            +e.header
+              +b.title_size_l.__title Данные о путешествениках
+              +e.icon
+                +icon('triangle-pointer')
+            +e.content
+              +b.title_size_l.__title Покупатель
+              +b.traveler-buyer
+                +e.row
+                  +e.item_phone
+                    +e.label Телефон
+                    +e.input
+                      +b.input_size_m._color_gray(type='text', placeholder='+7')
+                  +e.item_mail
+                    +e.label E-mail
+                    +e.input
+                      +b.input_size_m._color_gray(type='text', placeholder='Ivan')
+                +e.row
+                  +e.item_lname
+                    +e.label Фамилия
+                    +e.input
+                      +b.input_size_m._color_gray(type='text', placeholder='Иванов')
+                  +e.item_fname
+                    +e.label Имя
+                    +e.input
+                      +b.input_size_m._color_gray(type='text', placeholder='Иванов')
+                +e.row
+                  +e.item_birth
+                    +e.label Дата рождения
+                    +b.date-field
+                      +b.input_size_m.__input.js-datepicker(type='text')
+                      +e.icon
+                        +icon('calendar')
+                  +e.item_pasport
+                    +e.label Серия и номер (загранпаспорт)
+                    +e.input_serial
+                      +b.input_size_m._color_gray(type='text', placeholder='0000')
+                    +e.input_number
+                      +b.input_size_m._color_gray(type='text', placeholder='000000')
+                +e.row
+                  +checkbox({label: 'Я согласен с <a class="link link_color_green" href="#">условиями передачи информации</a>'})
+                +e.pay
+                  +e.pay-price
+                    +e.pay-price-title Стоиомсть страховки
+                    +e.pay-price-number 926,4 ₽
+                  +e.pay-btn
+                    +b.button_size_l._color_green._uppercase(type='submit') Оплатить
+                    +e.submit-icon
+                      +icon('triangle-pointer')
+
+
+
         +b.helper._-visible
           +e.item
             +e.time 4 мин назад
@@ -302,3 +503,23 @@ block templates
           option 10 лет
       +b.insuranced-ppl__add-ppl
         +b.link_color_green.js-insurance-ppl-add Добавить еще человека
+
+  template#addCard
+    +b.add-card.__add-card
+      +e.counter {{counter}}
+      +e.close.js-add-card-close
+        +icon('close')
+      +e.last-name
+        +e.label  Фамилия латиницей
+        +e.input
+          +b.input_size_m(type='text')
+      +e.first-name
+        +e.label Имя латиницей
+        +e.input
+          +b.input_size_m(type='text')
+      +e.birthday
+        +e.label Дата рождение
+        +b.date-field
+          +b.input_size_m.__input.js-datepicker(type='text')
+          +e.icon
+            +icon('calendar')

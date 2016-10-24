@@ -1,0 +1,28 @@
+$cls = 'what-to-do'
+
+.{$cls}
+  padding-top 1.4%
+  padding-right 5%
+  padding-left 6.3%
+  font-family $openSans
+  font-size 14px
+  color $black
+  line-height 20px
+  background-color #fff
+
+  ul
+    list-style-type none
+    li
+      position relative
+      &:before
+        content ''
+        position absolute
+        left -30px
+        top 50%
+        display block
+        width 20px
+        height 1px
+        background-color #77bc1f
+
+  &__gray
+    color #9b9b9b

@@ -26,6 +26,12 @@ $cls = 'page'
     width 100%
     height 100%
     border-spacing 0
+    .tabs
+      width 61.5%
+      display table-cell
+      vertical-align top
+      //background-color #f4f4f4
+
 
 @media $mDesktop
   .{$cls}
@@ -33,6 +39,8 @@ $cls = 'page'
       width 48%
     &__right
       width 52%
+      .tabs
+        width 63.5%
 
     &__inner_index
       .{$cls}

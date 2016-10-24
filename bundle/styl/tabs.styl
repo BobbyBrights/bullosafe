@@ -1,10 +1,6 @@
 $cls = 'tabs'
 
 .{$cls}
-  display table-cell
-  vertical-align top
-  width 61.5%
-  background-color #f4f4f4
   //box-shadow inset 12px 0 12px alpha($border, 39%)
 
   &__header
@@ -24,6 +20,7 @@ $cls = 'tabs'
     padding-right 15px
     color $green
     text-align center
+    background-color #fff
     transition background-color .2s ease
     cursor pointer
     &_fast-buy
@@ -42,10 +39,16 @@ $cls = 'tabs'
       display block
 
 
+  &_company
+    .{$cls}
+      &__item
+        &_included
+          width 35%
+        &_what-to-do
+          width 65%
+
 @media $mDesktop
   .{$cls}
-    width 63.5%
-
     &__item
       text-align left
       padding-top 5.2%

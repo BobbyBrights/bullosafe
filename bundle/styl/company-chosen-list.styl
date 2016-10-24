@@ -1,0 +1,35 @@
+$cls = 'company-chosen-list'
+
+.{$cls}
+  //height 100%
+  //background url(../img/bg-calc.jpg) repeat-y left top
+  //background-size cover
+
+  &__item-header
+    &:after
+      clearfix()
+
+  &__title
+    float left
+    margin-bottom 4%
+    padding-top 5.2%
+    //padding-left 3.4%
+    color #fff
+    font-weight 500
+
+  &__back-to-top
+    float right
+    padding-top 5.2%
+    font-family $openSans
+    font-size 14px
+    line-height 20px
+    color #fff
+
+  &__item
+    width 93%
+    margin 0 auto 15px
+
+@media $mDesktop
+ .{$cls}
+   &__title
+     margin-bottom 5.3%

@@ -1,0 +1,64 @@
+$cls = 'add-card'
+
+.{$cls}
+  position relative
+  margin-bottom 2.5%
+  padding-top 2.5%
+  padding-left 8%
+  padding-right 5.2%
+  padding-bottom 5%
+  font-family $openSans
+  color $black
+  border-radius 4px
+  background-color #f7f8f4
+
+  &__counter
+    position absolute
+    top 6%
+    left 2.5%
+    font-size 14px
+
+  &__close
+    position absolute
+    top 7.5%
+    right 2.5%
+    cursor pointer
+    .icon
+      width 13px
+      height 13px
+
+  &__label
+    font-size 14px
+    margin-bottom 9px
+
+  &__last-name
+    display inline-block
+    vertical-align top
+    width 50.5%
+    margin-right 5.5%
+    margin-bottom 6%
+
+  &__first-name
+    display inline-block
+    vertical-align top
+    width 44%
+    margin-bottom 6%
+
+  &__birthday
+    width 43%
+
+
+@media $mDesktop
+  .{$cls}
+    padding-right 8%
+    &__counter
+      top 4%
+    &__close
+      top 5%
+      right 1.5%
+    &__label
+      overflow-x hidden
+      text-overflow ellipsis
+      white-space nowrap
+    &__birthday
+      width 100%

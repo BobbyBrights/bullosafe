@@ -1,0 +1,95 @@
+$cls = 'traveler-buyer'
+
+.{$cls}
+  font-family $openSans
+
+  &__row
+    margin-bottom 6.5%
+
+  &__label
+    font-size 14px
+    margin-bottom 12px
+
+  &__item
+    display inline-block
+    vertical-align top
+    &_phone
+      width 39%
+      margin-right 6%
+    &_mail
+      width 55%
+    &_lname
+      width 48%
+      margin-right 5%
+    &_fname
+      width 47%
+    &_birth
+      width 33%
+      margin-right 11%
+    &_pasport
+      width 54%
+      .{$cls}__input
+        display inline-block
+        vertical-align top
+        &_serial
+          width 30%
+          margin-right 5%
+        &_number
+          width 40%
+
+  &__pay
+    padding-top 6%
+    border-top 1px solid #e0e4ea
+    font-size 0
+
+  &__pay-price
+    display inline-block
+    vertical-align middle
+    width 40%
+    margin-right 2%
+
+  &__pay-price-title
+    font-family $openSans
+    font-size 14px
+    color #9b9b9b
+
+  &__pay-price-number
+    font-size 30px
+    font-family $dinCondensed
+    font-weight 500
+
+  &__pay-btn
+    position relative
+    display inline-block
+    vertical-align middle
+    width 58%
+    text-align right
+    .button
+      max-width 100%
+      padding-right 50px
+      padding-left 50px
+
+  &__submit-icon
+    position absolute
+    right 7%
+    top 50%
+    transform translateY(-50%)
+    .icon
+      width 8px
+      height 13px
+      fill #fff
+
+
+@media $mDesktop
+  .{$cls}
+    &__label
+      overflow-x hidden
+      text-overflow ellipsis
+      white-space nowrap
+    &__item
+      &_birth
+        width 100%
+        margin-right 0
+        margin-bottom 6.5%
+      &_pasport
+        width 100%

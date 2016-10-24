@@ -6,6 +6,15 @@ $(document).ready(function() {
     $('.js-select').select2({
       minimumResultsForSearch: Infinity
     });
+    $('.js-datepicker').datepicker({
+      language: "ru",
+      todayHighlight: true,
+      toggleActive: true,
+      format: "dd.mm.yyyy",
+      multidate: true,
+      multidateSeparator: "-"
+    });
+
   }
 
   /**
@@ -61,12 +70,13 @@ $(document).ready(function() {
    * Переключение табов
    */
   $('.js-tabs-item').on('click', function() {
+    var parent = $(this).parents('.tabs');
     var tabData = $(this).attr('data-tab');
 
-    $('.js-tabs-item').removeClass('_active');
+    parent.find('.js-tabs-item').removeClass('_active');
     $(this).addClass('_active');
-    $('.js-content-item').removeClass('_active');
-    $('.js-content-item[data-content='+ tabData +']').addClass('_active');
+    parent.find('.js-content-item').removeClass('_active');
+    parent.find('.js-content-item[data-content='+ tabData +']').addClass('_active');
   });
 
   /**
@@ -75,4 +85,41 @@ $(document).ready(function() {
   $('.js-ao-close').on('click', function() {
     $(this).parents('.additional-options').toggleClass('_closed');
   });
+
+  /**
+   * Крутим скролл страницы наверх
+   */
+  $(document).on('click', '.js-back-to-top', function() {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+  });
+
+  /**
+   * Добавление путешественника
+   */
+  $('.js-add-new-traveler').on('click', function() {
+    var list = $('.js-travelers-list');
+    var source   = $('#addCard').html();
+    var template = Handlebars.compile(source);
+    var index = $('.js-travelers-list .add-card').length + 1;
+
+    list.append(template({counter: index}));
+    reInit();
+  });
+
+  /**
+   * Удаление карточки путешественника
+   */
+  $(document).on('click', '.js-add-card-close', function() {
+    $(this).parent().remove();
+    $('.add-card').each(function(index, item) {
+      $(item).find('.add-card__counter').html(index + 1)
+    })
+  });
+
+  /**
+   * Закрывание дропдауна
+   */
+  $('.dropdown__header').on('click', function() {
+    $(this).parent().toggleClass('_open');
+  })
 });

@@ -29,6 +29,25 @@ $cls = 'company'
     font-weight 500
     color $black
 
+  &__chosen
+    display table-cell
+    vertical-align middle
+    //min-width 43px
+    //max-width 43px
+    //max-height 43px
+  &__chosen-icon
+    width 43px
+    height 43px
+    padding-top 12px
+    background-color #77bc1f
+    border-radius 50%
+    .icon
+      display block
+      width 21px
+      height 18px
+      margin auto
+
+
   &__buy
     display table-cell
     vertical-align middle
@@ -176,16 +195,47 @@ $cls = 'company'
     padding-right 15px
     font-size 30px
     font-weight 500
-    color $black
 
   &__footer-buy
     float right
 
+  &__phones
+    font-family $openSans
+    font-size 0
 
-&._open
+  &__phones-item
+    display inline-block
+    vertical-align top
+    width 50%
+    &:nth-of-type(1)
+      float left
+    &:nth-of-type(2)
+      text-align right
+
+  &__phones-title
+    font-size 14px
+    margin-bottom 5px
+
+  &__phones-number
+    font-family $dinCondensed
+    font-size 30px
+    font-weight 500
+
+
+
+  &_chosen
+    .{$cls}
+      &__pdf-list
+        border-bottom-color $green
+      &__footer
+        white-space normal
+
+  &._open
     .{$cls}
       &__content
         display block
+
+
 
 
 @media $mDesktop

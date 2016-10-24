@@ -1,6 +1,7 @@
 $cls = 'helper'
 
 .{$cls}
+  position relative
   display none
   vertical-align top
   width 38.5%
@@ -10,6 +11,7 @@ $cls = 'helper'
   font-family $openSans
   background #f4f4f4
   box-shadow inset 12px 0 0 alpha($border, 39%)
+  z-index 5
 
   &__item
     &:not(:last-of-type)
