@@ -14,8 +14,8 @@ html(lang='ru')
     link(rel='stylesheet', href='./static/css/style.css')
     block css
 
-  +b('body').page
-    //include ../../public/icons.html
+  +b('body').page.js-page
+    include ../../public/icons.html
     include /bundle/__blocks/_mixins/_icon
 
     block header
@@ -30,6 +30,6 @@ html(lang='ru')
     script(src='./static/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
     script(src='./static/lib/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js')
     script(src='./static/lib/ion.rangeSlider/js/ion.rangeSlider.min.js')
-    script(src='./static/js/svgIcons.js')
+    //script(src='./static/js/svgIcons.js') // FIXME кэширование свг
     script(src='./static/js/common.js')
     block js
